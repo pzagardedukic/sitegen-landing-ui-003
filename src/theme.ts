@@ -29,6 +29,7 @@ declare module "@mui/material/styles" {
       placeholder: string;
       plate: string;
       onPlate: string;
+      logoTile: string;
     };
   }
 
@@ -56,6 +57,7 @@ declare module "@mui/material/styles" {
       placeholder?: string;
       plate?: string;
       onPlate?: string;
+      logoTile?: string;
     };
   }
 

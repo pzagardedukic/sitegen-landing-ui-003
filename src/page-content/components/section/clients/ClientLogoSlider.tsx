@@ -61,7 +61,19 @@ export default function ClientLogoSlider({
               src={client.src}
               alt=""
               loading="lazy"
-              sx={{
+              sx={(theme) => ({
+                /*
+                 * Every logo gets a tile of its own, which the light theme does not do.
+                 * The strip greys the artwork and drops it to 65 %; on a dark page that is
+                 * a dark mark on a dark ground and simply is not there. The Figma dark
+                 * frames put each one on its own plate, and this is that plate.
+                 */
+                backgroundColor: theme.palette.surfaces.logoTile,
+                border: `1px solid ${theme.palette.surfaces.border}`,
+                borderRadius: "14px",
+                px: "12px",
+                boxSizing: "border-box",
+                width: "100%",
                 maxWidth: "100%",
                 height: 120,
                 objectFit: "contain",
@@ -69,7 +81,7 @@ export default function ClientLogoSlider({
                 opacity: 0.65,
                 transition: "opacity .2s ease, filter .2s ease",
                 "a:hover &": { filter: "none", opacity: 1 },
-              }}
+              })}
             />
           </Box>
         ))}

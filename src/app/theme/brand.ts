@@ -204,17 +204,27 @@ export function brandSurfaces(brand: BrandColors) {
      */
     border: alpha(readableText, 0.22),
     /*
-     * Design system: photographs carry a flat black overlay, white copy above it. On a
-     * white page 60 % gave depth; on a dark one an unchanged photograph becomes the
-     * brightest thing on the screen and pulls the eye off the words, so it goes deeper.
+     * Sixty per cent, the same as the light theme. I had reasoned it should go deeper on a
+     * dark page, where an untouched photograph becomes the brightest thing on the screen;
+     * the Figma dark frames keep it at sixty, and the design is the authority.
      */
-    scrim: alpha("#000000", 0.72),
+    scrim: alpha("#000000", 0.6),
     /*
-     * Neutral stand-in where a photograph is missing. `#22222c` in Figma, which is the
-     * block the map sits in when a customer has not enabled one — dark enough not to flash,
-     * light enough to read as a shape rather than a hole.
+     * Neutral stand-in where a photograph is missing. Figma uses `#3a3a46` for a missing
+     * photograph — in the CTA band and the newsletter band both — and a darker `#22222c`
+     * for the block where a map would be. This is the photograph one, which is what the
+     * value is for; it has to read as a picture that has not arrived rather than a hole.
      */
-    placeholder: lighten(pageBase(brand), 0.07),
+    placeholder: lighten(pageBase(brand), 0.19),
+    /*
+     * One step above the plate, for the tile each partner logo sits on.
+     *
+     * In the light theme the logos sit straight on the page. On a dark ground that fails —
+     * the strip greys them to 65 %, and a dark logo on a dark page is nothing at all — so
+     * the dark frames give every logo its own `#20202a` tile with a 0.22 border. This is
+     * the one place where dark needs a shape the light theme does not have.
+     */
+    logoTile: lighten(pageBase(brand), 0.07),
     /*
      * The plate the logo sits on: the notch cut out of the hero, and the fillets that carry
      * it back into the card edge.

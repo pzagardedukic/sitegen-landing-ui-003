@@ -164,9 +164,10 @@ export default function SubscribeSection() {
                 flex: { sm: "1 1 560px" },
                 "& .MuiOutlinedInput-root": {
                   borderRadius: 999,
-                  backgroundColor: "rgba(255,255,255,0.08)",
+                  /* Filled, not a wash of white: the dark frames give the field the plate colour. */
+                  backgroundColor: "#191920",
                   color: theme.palette.common.white,
-                  "& fieldset": { borderColor: "rgba(255,255,255,0.5)" },
+                  "& fieldset": { borderColor: "rgba(255,255,255,0.45)" },
                   "&:hover fieldset": { borderColor: "rgba(255,255,255,0.8)" },
                   "&.Mui-focused fieldset": {
                     borderColor: theme.palette.common.white,
