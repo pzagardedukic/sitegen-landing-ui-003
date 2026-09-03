@@ -3,6 +3,7 @@
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { Box } from "@mui/material";
 import { getExperienceItems } from "@/core/runtime";
+import CardSurface from "@/components/surface/CardSurface";
 
 /*
  * Certifications as four tiles across the 1200 grid, 277 wide and 190 tall with a 30 gutter.
@@ -29,7 +30,7 @@ export default function ExperienceItems() {
         const isLink = Boolean(item.url);
 
         return (
-          <Box
+          <CardSurface
             key={index}
             {...(isLink
               ? {
@@ -44,7 +45,6 @@ export default function ExperienceItems() {
               height: { xs: 140, md: 190 },
               borderRadius: "25px",
               border: `1px solid ${theme.palette.surfaces.border}`,
-              backgroundColor: theme.palette.surfaces.card,
               display: "grid",
               placeItems: "center",
               p: 3,
@@ -74,7 +74,7 @@ export default function ExperienceItems() {
                 }}
               />
             )}
-          </Box>
+          </CardSurface>
         );
       })}
     </Box>

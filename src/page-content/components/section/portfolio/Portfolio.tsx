@@ -43,7 +43,9 @@ export default function Portfolio({ maxCnt }: PortfolioProps) {
     : paginatedItems;
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}
+    >
       {/* Filters sit on the left margin, not centred — see the Figma frame. */}
       <CategorySelector
         categories={categories}

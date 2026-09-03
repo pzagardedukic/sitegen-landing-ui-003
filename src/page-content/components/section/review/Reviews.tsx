@@ -60,7 +60,8 @@ export default function Reviews() {
           sx={{ display: "flex", flexDirection: "column", gap: "30px" }}
         >
           {column.map((item, position) => {
-            const pattern = HEIGHTS[columnCount][columnIndex % HEIGHTS[columnCount].length];
+            const pattern =
+              HEIGHTS[columnCount][columnIndex % HEIGHTS[columnCount].length];
 
             return (
               <ReviewCard

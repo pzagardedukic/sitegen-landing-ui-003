@@ -3,10 +3,7 @@
 import ImageCarousel from "./ImageCarousel";
 import { getAboutItems, getAboutSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
-import {
-  getAboutTranslation,
-  getButtonTranslation,
-} from "@/core/translations";
+import { getAboutTranslation, getButtonTranslation } from "@/core/translations";
 import DualColumnSection from "../common/DualColumnSection";
 import EstablishedAndClients from "../common/EstablishedAndClients";
 import { getPageSlugByKeyWithBasePath } from "@/core/static";

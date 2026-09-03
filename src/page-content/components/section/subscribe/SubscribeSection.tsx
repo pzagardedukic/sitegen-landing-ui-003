@@ -176,7 +176,10 @@ export default function SubscribeSection() {
                 "& .MuiOutlinedInput-input": {
                   px: 3,
                   py: 2,
-                  "&::placeholder": { color: "rgba(255,255,255,0.75)", opacity: 1 },
+                  "&::placeholder": {
+                    color: "rgba(255,255,255,0.75)",
+                    opacity: 1,
+                  },
                 },
                 "& .MuiFormHelperText-root": {
                   mx: 3,

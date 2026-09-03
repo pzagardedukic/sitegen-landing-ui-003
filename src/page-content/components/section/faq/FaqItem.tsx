@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Box, Collapse, IconButton, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import CardSurface from "@/components/surface/CardSurface";
 
 type Props = {
   question: string;
@@ -24,13 +25,11 @@ export default function FaqItem({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <Box
+    <CardSurface
+      raised={open}
       sx={(theme) => ({
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: open
-          ? theme.palette.surfaces.raised
-          : theme.palette.surfaces.card,
         px: "30px",
         py: "26px",
         transition: theme.transitions.create("background-color"),
@@ -76,7 +75,11 @@ export default function FaqItem({
             }),
           })}
         >
-          {open ? <RemoveIcon fontSize="small" /> : <AddIcon fontSize="small" />}
+          {open ? (
+            <RemoveIcon fontSize="small" />
+          ) : (
+            <AddIcon fontSize="small" />
+          )}
         </IconButton>
       </Box>
 
@@ -95,6 +98,6 @@ export default function FaqItem({
           {answer}
         </Typography>
       </Collapse>
-    </Box>
+    </CardSurface>
   );
 }

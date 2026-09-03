@@ -2,6 +2,7 @@
 
 import { Box, Typography } from "@mui/material";
 import { stripRichText, truncateWordSafe } from "@/core/utils";
+import CardSurface from "@/components/surface/CardSurface";
 
 type BlogPreviewCardProps = {
   href: string;
@@ -30,7 +31,7 @@ export default function BlogPreviewCard({
   const truncatedText = stripRichText(truncateWordSafe(text, 180));
 
   return (
-    <Box
+    <CardSurface
       component="a"
       href={href}
       sx={(theme) => ({
@@ -41,10 +42,11 @@ export default function BlogPreviewCard({
         p: "18px",
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: theme.palette.surfaces.card,
         textDecoration: "none",
-        color: "inherit",
-        transition: theme.transitions.create(["border-color", "background-color"]),
+        transition: theme.transitions.create([
+          "border-color",
+          "background-color",
+        ]),
         "&:hover": {
           borderColor: theme.palette.primary.main,
           backgroundColor: theme.palette.surfaces.raised,
@@ -87,6 +89,6 @@ export default function BlogPreviewCard({
           {truncatedText}
         </Typography>
       </Box>
-    </Box>
+    </CardSurface>
   );
 }

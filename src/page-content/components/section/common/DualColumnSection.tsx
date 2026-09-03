@@ -37,7 +37,9 @@ export default function DualColumnSection({
   callToAction,
 }: DualColumnSectionProps) {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}
+    >
       <Box
         sx={{
           display: "grid",
@@ -71,7 +73,10 @@ export default function DualColumnSection({
              * text.secondary. A section rendered over a photograph sets white on its
              * container, and a fixed grey turns unreadable there.
              */
-            <Typography variant="body1" sx={{ color: "inherit", opacity: 0.72 }}>
+            <Typography
+              variant="body1"
+              sx={{ color: "inherit", opacity: 0.72 }}
+            >
               {description}
             </Typography>
           )}

@@ -10,6 +10,7 @@ import { stripRichText } from "@/core/utils";
 import { PriceUnitType, PricingItemStatus } from "@/core/types";
 import { getPricingTranslation_packagesNoImages } from "@/core/translations";
 import { useLanguage } from "@/core/runtime";
+import CardSurface from "@/components/surface/CardSurface";
 
 export type SubscriptionFeature = {
   label: string;
@@ -65,7 +66,8 @@ export default function SubscriptionCard({ plan, onSelect }: Props) {
   const cleanSubtitle = subtitle ? stripRichText(subtitle) : "";
 
   return (
-    <Box
+    <CardSurface
+      raised={highlight}
       sx={(theme) => ({
         position: "relative",
         height: "100%",
@@ -75,14 +77,6 @@ export default function SubscriptionCard({ plan, onSelect }: Props) {
         flexDirection: "column",
         gap: 2,
         border: `1px solid ${highlight ? "transparent" : theme.palette.surfaces.border}`,
-        /*
-         * Every package is a card, not only the recommended one. Transparent worked on a
-         * white page, where an outline on white already reads as a panel; on a dark page it
-         * left five of six packages as outline drawings and only the highlighted one solid.
-         */
-        backgroundColor: highlight
-          ? theme.palette.surfaces.raised
-          : theme.palette.surfaces.card,
         ...(highlight && {
           "&::before": {
             content: '""',
@@ -168,6 +162,6 @@ export default function SubscriptionCard({ plan, onSelect }: Props) {
           {t.items.callToAction}
         </GradientButton>
       </Box>
-    </Box>
+    </CardSurface>
   );
 }

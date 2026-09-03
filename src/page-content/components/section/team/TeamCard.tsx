@@ -47,7 +47,12 @@ const hrefFor = (item: ContactItem) => {
  * icons sitting on the picture itself in the lower-left corner, then the name and one line
  * about the person underneath.
  */
-export default function TeamCard({ name, text, image, contact = [] }: TeamCardProps) {
+export default function TeamCard({
+  name,
+  text,
+  image,
+  contact = [],
+}: TeamCardProps) {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
       <Box
@@ -89,7 +94,11 @@ export default function TeamCard({ name, text, image, contact = [] }: TeamCardPr
                 key={`${item.type}-${item.value}`}
                 component="a"
                 href={hrefFor(item)}
-                target={item.type === "EMAIL" || item.type === "PHONE" ? undefined : "_blank"}
+                target={
+                  item.type === "EMAIL" || item.type === "PHONE"
+                    ? undefined
+                    : "_blank"
+                }
                 rel="noopener noreferrer"
                 aria-label={item.type}
                 size="small"
@@ -111,7 +120,9 @@ export default function TeamCard({ name, text, image, contact = [] }: TeamCardPr
         )}
       </Box>
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: 0.75, px: 0.5 }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", gap: 0.75, px: 0.5 }}
+      >
         <Typography variant="h4" component="h3">
           {name}
         </Typography>

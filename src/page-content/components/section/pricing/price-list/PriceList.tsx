@@ -33,10 +33,12 @@ export default function PriceList() {
       },
       {},
     );
-  }, [filteredItems]);  
+  }, [filteredItems]);
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 6 } }}
+    >
       {/* Filters on the left margin, as on every other list page. */}
       <CategorySelector
         categories={categories}
@@ -59,10 +61,10 @@ export default function PriceList() {
               })}
             >
               {/*
-                * On a phone the price goes under the name instead of beside it. Held in one
-                * row, a 140 price column plus its struck-through original ate more than half
-                * of the 318 available and broke every title over three lines.
-                */}
+               * On a phone the price goes under the name instead of beside it. Held in one
+               * row, a 140 price column plus its struck-through original ate more than half
+               * of the 318 available and broke every title over three lines.
+               */}
               <Box
                 display="flex"
                 flexDirection={{ xs: "column", sm: "row" }}

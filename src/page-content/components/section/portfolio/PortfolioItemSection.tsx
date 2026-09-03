@@ -44,11 +44,16 @@ export default function PortfolioItemSection({ id }: { id: number }) {
   const details = [
     { label: projectTranslations.details.date, value: portfolioItem.date },
     { label: projectTranslations.details.client, value: portfolioItem.client },
-    { label: projectTranslations.details.category, value: portfolioItem.category },
+    {
+      label: projectTranslations.details.category,
+      value: portfolioItem.category,
+    },
   ].filter((detail) => Boolean(detail.value));
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}
+    >
       <BackButton
         label={projectTranslations.backToPortfolio}
         onClick={() => router.push(`/${getPageSlugByKey("portfolio")}`)}
@@ -123,7 +128,11 @@ export default function PortfolioItemSection({ id }: { id: number }) {
           alignItems: "start",
         }}
       >
-        <Typography variant="h2" component="h1" sx={{ gridColumn: { md: "1" } }}>
+        <Typography
+          variant="h2"
+          component="h1"
+          sx={{ gridColumn: { md: "1" } }}
+        >
           {portfolioItem.title}
         </Typography>
 
@@ -136,14 +145,20 @@ export default function PortfolioItemSection({ id }: { id: number }) {
         <Box
           sx={(theme) => ({
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", sm: `repeat(${details.length}, 1fr)` },
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: `repeat(${details.length}, 1fr)`,
+            },
             gap: { xs: 3, sm: "40px" },
             pt: { xs: 3, md: 4 },
             borderTop: `1px solid ${theme.palette.surfaces.border}`,
           })}
         >
           {details.map((detail) => (
-            <Box key={detail.label} sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <Box
+              key={detail.label}
+              sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+            >
               <Typography variant="caption" sx={{ opacity: 0.6 }}>
                 {detail.label}
               </Typography>
@@ -155,7 +170,9 @@ export default function PortfolioItemSection({ id }: { id: number }) {
 
       <ShareActions title={portfolioItem.title} />
 
-      {relatedItemIds.length > 0 && <RelatedProjects projectIds={relatedItemIds} />}
+      {relatedItemIds.length > 0 && (
+        <RelatedProjects projectIds={relatedItemIds} />
+      )}
     </Box>
   );
 }

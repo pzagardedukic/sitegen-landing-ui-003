@@ -1,6 +1,7 @@
 "use client";
 
 import { Avatar, Box, Typography } from "@mui/material";
+import CardSurface from "@/components/surface/CardSurface";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 type Review = {
@@ -27,9 +28,14 @@ export default function ReviewCard({ review, minHeight }: Props) {
   const isLink = Boolean(url);
 
   return (
-    <Box
+    <CardSurface
       {...(isLink
-        ? { component: "a", href: url, target: "_blank", rel: "noopener noreferrer" }
+        ? {
+            component: "a",
+            href: url,
+            target: "_blank",
+            rel: "noopener noreferrer",
+          }
         : {})}
       sx={(theme) => ({
         display: "flex",
@@ -39,9 +45,7 @@ export default function ReviewCard({ review, minHeight }: Props) {
         minHeight,
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: theme.palette.surfaces.card,
         textDecoration: "none",
-        color: "inherit",
         transition: theme.transitions.create(["border-color", "transform"]),
         ...(isLink && {
           "&:hover": {
@@ -71,6 +75,6 @@ export default function ReviewCard({ review, minHeight }: Props) {
           <ArrowOutwardIcon sx={{ fontSize: 15, color: "primary.main" }} />
         </Box>
       )}
-    </Box>
+    </CardSurface>
   );
 }

@@ -122,7 +122,14 @@ export default function PortfolioPreviewCard({
           p: "24px",
         }}
       >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5, alignItems: "flex-start" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1.5,
+            alignItems: "flex-start",
+          }}
+        >
           {category && <Tag label={category} tone="brand" />}
 
           {client && (

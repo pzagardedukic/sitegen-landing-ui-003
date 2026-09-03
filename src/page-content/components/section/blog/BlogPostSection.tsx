@@ -28,7 +28,9 @@ export default function BlogPostSection({ id }: { id: number }) {
   }
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}
+    >
       <BackButton
         label={blogTranslations.posts.backToBlogs}
         onClick={() => router.push(`/${getPageSlugByKey("blog")}`)}

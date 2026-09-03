@@ -25,7 +25,9 @@ export default function GallerySection() {
   if (galleryItems.length === 0) return null;
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}
+    >
       <Typography variant="h2" component="h2">
         {galleryTranslation.title}
       </Typography>

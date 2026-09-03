@@ -28,7 +28,7 @@ export default function DiscountBadge({
   }
 
   const discountPercent = Math.round(
-    ((original - discounted) / original) * 100
+    ((original - discounted) / original) * 100,
   );
 
   if (discountPercent <= 0) return null;

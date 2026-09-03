@@ -41,10 +41,7 @@ export default function TeamSection() {
         }}
       >
         {teamItems.map((member, index) => (
-          <Box
-            key={index}
-            sx={{ mt: { md: index % 2 === 1 ? "60px" : 0 } }}
-          >
+          <Box key={index} sx={{ mt: { md: index % 2 === 1 ? "60px" : 0 } }}>
             <TeamCard
               name={member.name}
               text={member.text}

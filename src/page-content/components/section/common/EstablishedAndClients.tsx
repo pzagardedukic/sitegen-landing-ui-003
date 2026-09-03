@@ -40,7 +40,9 @@ export default function EstablishedAndClients() {
     >
       {aboutSection.establishedYear && (
         <MarqueeBand
-          items={[`${aboutTranslation.establishedIn} ${aboutSection.establishedYear}`]}
+          items={[
+            `${aboutTranslation.establishedIn} ${aboutSection.establishedYear}`,
+          ]}
           speed={45}
           tone="brand"
         />

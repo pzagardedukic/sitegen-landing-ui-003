@@ -1,10 +1,7 @@
 import { Box } from "@mui/material";
 
 import type { Career } from "@/core/runtime";
-import {
-  getCareerSlugById,
-  getPageSlugByKey,
-} from "@/core/static";
+import { getCareerSlugById, getPageSlugByKey } from "@/core/static";
 import { useLanguage } from "@/core/runtime";
 import {
   getButtonTranslation,

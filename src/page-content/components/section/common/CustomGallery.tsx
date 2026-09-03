@@ -122,7 +122,11 @@ export const CustomGallery = ({
                     alt={`Gallery Image ${position + 1}`}
                     onClick={open}
                     width={thumbSize}
-                    sx={{ height: thumbSize, borderRadius: "16px", display: "block" }}
+                    sx={{
+                      height: thumbSize,
+                      borderRadius: "16px",
+                      display: "block",
+                    }}
                   />
                 )}
               </Item>

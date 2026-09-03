@@ -97,7 +97,13 @@ export default function PricingItemSection({ id }: { id: number }) {
           />
         </Box>
 
-        <Box flex={1} minWidth={0} gap={3} display="flex" flexDirection="column">
+        <Box
+          flex={1}
+          minWidth={0}
+          gap={3}
+          display="flex"
+          flexDirection="column"
+        >
           <Box
             display="flex"
             flexDirection={{ xs: "column", sm: "row" }}

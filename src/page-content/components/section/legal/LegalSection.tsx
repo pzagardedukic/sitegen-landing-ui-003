@@ -6,6 +6,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { getLegalSection } from "@/core/runtime";
 import { useLanguage } from "@/core/runtime";
 import { getLegalTranslation } from "@/core/translations";
+import CardSurface from "@/components/surface/CardSurface";
 
 type LegalDocument = {
   key: "termsOfService" | "privacyPolicy";
@@ -48,7 +49,7 @@ export default function LegalSection() {
   return (
     <Box sx={{ display: "flex", flexDirection: "column", gap: "18px" }}>
       {documents.map((legalDocument) => (
-        <Box
+        <CardSurface
           key={legalDocument.key}
           component="a"
           href={legalDocument.file}
@@ -68,10 +69,12 @@ export default function LegalSection() {
             gap: 2,
             textDecoration: "none",
             color: "inherit",
-            transition: theme.transitions.create(["border-color", "background-color"]),
+            transition: theme.transitions.create([
+              "border-color",
+              "background-color",
+            ]),
             "&:hover": {
               borderColor: theme.palette.primary.main,
-              backgroundColor: theme.palette.surfaces.card,
             },
           })}
         >
@@ -93,7 +96,7 @@ export default function LegalSection() {
             </Typography>
             <ArrowOutwardIcon sx={{ fontSize: 16 }} />
           </Box>
-        </Box>
+        </CardSurface>
       ))}
     </Box>
   );

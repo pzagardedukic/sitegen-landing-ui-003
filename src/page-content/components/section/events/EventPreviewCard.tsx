@@ -8,6 +8,7 @@ import type { LanguageKey } from "@/core/types";
 import { formatEventDate, getRelativeEventDay } from "@/core/utils";
 import { FALLBACK_IMAGE } from "@/core/static";
 import { stripRichText, truncateWordSafe } from "@/core/utils";
+import CardSurface from "@/components/surface/CardSurface";
 
 type EventPreviewCardProps = {
   image: string;
@@ -47,13 +48,12 @@ export default function EventPreviewCard({
         : "";
 
   return (
-    <Box
+    <CardSurface
       className="zoom-image-parent"
       sx={(theme) => ({
         position: "relative",
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: theme.palette.surfaces.card,
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -79,9 +79,7 @@ export default function EventPreviewCard({
             gap: 1,
           }}
         >
-          {isCancelled && (
-            <Tag label={cancelledLabel} tone="outline" />
-          )}
+          {isCancelled && <Tag label={cancelledLabel} tone="outline" />}
 
           {relativeDayLabel && (
             <Tag
@@ -154,6 +152,6 @@ export default function EventPreviewCard({
           </Box>
         )}
       </Box>
-    </Box>
+    </CardSurface>
   );
 }

@@ -204,12 +204,14 @@ export function brandSurfaces(brand: BrandColors) {
      * what the Figma dark frames draw, deliberately. Figma was read from a rendering; the
      * site is read on a screen, and at this end of the scale the screen decides.
      */
-    card: lighten(pageBase(brand), 0.075),
+    card: "#ECECF1",
     /*
      * One step above a card, for what has to sit on top of one: a field inside a form, the
      * head of a table. Without it a field on a card is the same colour as the card.
      */
-    raised: lighten(pageBase(brand), 0.125),
+    raised: "#FFFFFF",
+    /* The ink on a light card. The page ground, which keeps the two ends of the theme related. */
+    onCard: pageBase(brand),
     /*
      * `rgba(255,255,255,0.22)`, straight from the Figma dark contact frame, where it draws
      * the panel and every field in it.

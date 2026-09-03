@@ -24,6 +24,7 @@ import BackButton from "@/components/button/BackButton";
 import GradientButton from "@/components/button/GradientButton";
 import SectionDescription from "../common/SectionDescription";
 import ShareActions from "../common/ShareActions";
+import CardSurface from "@/components/surface/CardSurface";
 
 /*
  * Job detail. The title is already on the banner above, so the section opens with the back
@@ -105,17 +106,16 @@ export default function CareerItemSection({ id }: { id: number }) {
       )}
 
       {career.note && (
-        <Box
+        <CardSurface
           sx={(theme) => ({
             borderRadius: "25px",
             border: `1px solid ${theme.palette.surfaces.border}`,
-            backgroundColor: theme.palette.surfaces.card,
             px: { xs: 2.5, sm: 3 },
             py: 2.5,
           })}
         >
           <SectionDescription description={career.note} textAlign="left" />
-        </Box>
+        </CardSurface>
       )}
 
       <Divider />

@@ -5,6 +5,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import GradientButton from "@/components/button/GradientButton";
 
 import { stripRichText, truncateWordSafe } from "@/core/utils";
+import CardSurface from "@/components/surface/CardSurface";
 
 type CareerPreviewCardProps = {
   href: string;
@@ -33,7 +34,7 @@ export default function CareerPreviewCard({
   const previewRequirements = requirements.slice(0, 3);
 
   return (
-    <Box
+    <CardSurface
       sx={(theme) => ({
         display: "grid",
         gridTemplateColumns: { xs: "1fr", md: "600fr 80fr 488fr" },
@@ -41,7 +42,6 @@ export default function CareerPreviewCard({
         p: { xs: "24px", md: "30px 32px" },
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: theme.palette.surfaces.card,
         transition: theme.transitions.create("border-color"),
         "&:hover": {
           borderColor: theme.palette.primary.main,
@@ -61,7 +61,11 @@ export default function CareerPreviewCard({
           component="a"
           href={href}
           variant="h4"
-          sx={{ textDecoration: "none", color: "inherit", "&:hover": { opacity: 0.75 } }}
+          sx={{
+            textDecoration: "none",
+            color: "inherit",
+            "&:hover": { opacity: 0.75 },
+          }}
         >
           {title}
         </Typography>
@@ -86,7 +90,10 @@ export default function CareerPreviewCard({
               {requirementsLabel}
             </Typography>
 
-            <Box component="ul" sx={{ listStyle: "none", display: "grid", gap: 0.75 }}>
+            <Box
+              component="ul"
+              sx={{ listStyle: "none", display: "grid", gap: 0.75 }}
+            >
               {previewRequirements.map((requirement, index) => (
                 <Box
                   key={index}
@@ -115,6 +122,6 @@ export default function CareerPreviewCard({
           {applyLabel}
         </GradientButton>
       </Box>
-    </Box>
+    </CardSurface>
   );
 }

@@ -24,7 +24,9 @@ export default function BlogPreviewSection() {
   const blogItems = getBlogItems(lang).slice(0, 3); // Show only 3 preview items
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}
+    >
       <Box
         sx={{
           display: "flex",
@@ -34,7 +36,14 @@ export default function BlogPreviewSection() {
           gap: { xs: 3, md: 6 },
         }}
       >
-        <Box sx={{ maxWidth: 700, display: "flex", flexDirection: "column", gap: 2 }}>
+        <Box
+          sx={{
+            maxWidth: 700,
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
           <Typography variant="h2" component="h2">
             {blogTranslation.title}
           </Typography>

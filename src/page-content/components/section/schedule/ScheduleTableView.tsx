@@ -1,6 +1,7 @@
 "use client";
 
 import { Box, Typography } from "@mui/material";
+import CardSurface from "@/components/surface/CardSurface";
 
 type ScheduleTableViewProps = {
   title: string;
@@ -20,7 +21,10 @@ export default function ScheduleTableView({
   text,
   rows,
 }: ScheduleTableViewProps) {
-  const columnCount = rows.reduce((count, row) => Math.max(count, row.length), 0);
+  const columnCount = rows.reduce(
+    (count, row) => Math.max(count, row.length),
+    0,
+  );
   const headerCells = rows[0] ?? [];
   const bodyRows = rows.slice(1);
 
@@ -40,13 +44,12 @@ export default function ScheduleTableView({
         </Typography>
       )}
 
-      <Box
+      <CardSurface
         role="table"
         sx={(theme) => ({
           mt: 1,
           borderRadius: "25px",
           border: `1px solid ${theme.palette.surfaces.border}`,
-          backgroundColor: theme.palette.surfaces.card,
           overflow: "hidden",
         })}
       >
@@ -102,7 +105,7 @@ export default function ScheduleTableView({
             ))}
           </Box>
         ))}
-      </Box>
+      </CardSurface>
     </Box>
   );
 }

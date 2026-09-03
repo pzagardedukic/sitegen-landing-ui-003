@@ -16,9 +16,7 @@ import { getEventItems, getEventsSection } from "@/core/runtime";
 import { getEventSlugById, getPageSlugByKey } from "@/core/static";
 import { useListFilters } from "@/core/react";
 import { useLanguage } from "@/core/runtime";
-import {
-  getEventsTranslation,
-} from "@/core/translations";
+import { getEventsTranslation } from "@/core/translations";
 import { formatEventDate, getEventDateTimestamp } from "@/core/utils";
 import { stripRichText } from "@/core/utils";
 import { normalizeSearchValue, paginate } from "@/core/utils";

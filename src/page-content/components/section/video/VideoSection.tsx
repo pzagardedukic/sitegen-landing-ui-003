@@ -15,7 +15,9 @@ export default function VideoSection() {
   if (!videoSection || videoSection.items.length === 0) return null;
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 5 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 5 } }}
+    >
       <Typography variant="h2" component="h2">
         {videosTranslation.title}
       </Typography>

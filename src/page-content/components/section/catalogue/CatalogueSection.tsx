@@ -10,6 +10,7 @@ import {
   getCataloguesTranslation,
 } from "@/core/translations";
 import { getFileType } from "@/core/static";
+import CardSurface from "@/components/surface/CardSurface";
 
 /*
  * Catalogues are rows in the Figma frame (1200x90): the file name on the left, the download
@@ -27,14 +28,16 @@ export default function CatalogueSection() {
   }
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 5 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 4, md: 5 } }}
+    >
       <Typography variant="h2" component="h2">
         {cataloguesTranslation.title}
       </Typography>
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: "18px" }}>
         {catalogueSection.items.map((item, index) => (
-          <Box
+          <CardSurface
             key={index}
             sx={(theme) => ({
               minHeight: 90,
@@ -42,7 +45,6 @@ export default function CatalogueSection() {
               py: 2,
               borderRadius: "25px",
               border: `1px solid ${theme.palette.surfaces.border}`,
-              backgroundColor: theme.palette.surfaces.card,
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
               alignItems: { xs: "flex-start", sm: "center" },
@@ -70,7 +72,7 @@ export default function CatalogueSection() {
             >
               {buttonTranslation.learnMore}
             </GradientButton>
-          </Box>
+          </CardSurface>
         ))}
       </Box>
     </Box>

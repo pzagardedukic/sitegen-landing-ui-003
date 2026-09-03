@@ -47,7 +47,9 @@ export default function ScheduleSection() {
         />
       )}
 
-      <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}>
+      <Box
+        sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 7 } }}
+      >
         {filteredTables.map((scheduleTable, index) => (
           <ScheduleTableView
             key={index}

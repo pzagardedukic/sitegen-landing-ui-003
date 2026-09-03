@@ -19,7 +19,9 @@ export default function BlogSection() {
   );
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 5, md: 8 } }}
+    >
       <Box sx={{ display: "flex", flexDirection: "column", gap: "24px" }}>
         {paginatedItems.map((item) => (
           <BlogPreviewCard

@@ -18,7 +18,9 @@ export default function ContactPreviewSection() {
   const map = getMap();
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: { xs: 6, md: 10 } }}>
+    <Box
+      sx={{ display: "flex", flexDirection: "column", gap: { xs: 6, md: 10 } }}
+    >
       <Box
         sx={{
           display: "grid",
