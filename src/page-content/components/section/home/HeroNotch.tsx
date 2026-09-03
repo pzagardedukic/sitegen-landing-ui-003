@@ -35,12 +35,12 @@ export default function HeroNotch() {
     position: "absolute" as const,
     width: fillet,
     height: fillet,
-    background: `radial-gradient(circle at 100% 100%, transparent 0, transparent ${fillet.md - 1}px, ${theme.palette.background.default} ${fillet.md}px)`,
+    background: `radial-gradient(circle at 100% 100%, transparent 0, transparent ${fillet.md - 1}px, ${theme.palette.surfaces.plate} ${fillet.md}px)`,
     [theme.breakpoints.down("sm")]: {
-      background: `radial-gradient(circle at 100% 100%, transparent 0, transparent ${fillet.xs - 1}px, ${theme.palette.background.default} ${fillet.xs}px)`,
+      background: `radial-gradient(circle at 100% 100%, transparent 0, transparent ${fillet.xs - 1}px, ${theme.palette.surfaces.plate} ${fillet.xs}px)`,
     },
     [theme.breakpoints.only("sm")]: {
-      background: `radial-gradient(circle at 100% 100%, transparent 0, transparent ${fillet.sm - 1}px, ${theme.palette.background.default} ${fillet.sm}px)`,
+      background: `radial-gradient(circle at 100% 100%, transparent 0, transparent ${fillet.sm - 1}px, ${theme.palette.surfaces.plate} ${fillet.sm}px)`,
     },
   });
 
@@ -64,7 +64,7 @@ export default function HeroNotch() {
         sx={(theme) => ({
           width: shift(width, OVERHANG),
           height: shift(height, OVERHANG),
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: theme.palette.surfaces.plate,
           borderTopLeftRadius: shift(radius, OVERHANG),
           borderBottomRightRadius: radius,
         })}

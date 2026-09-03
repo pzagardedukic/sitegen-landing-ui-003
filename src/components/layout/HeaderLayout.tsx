@@ -86,7 +86,7 @@ export default function HeaderLayout({
            */
           "--logo-color": scrolled
             ? theme.palette.header.text
-            : theme.palette.text.primary,
+            : theme.palette.surfaces.onPlate,
           [theme.breakpoints.up("sm")]: {
             // MUI's own Toolbar rule drops the bar to 64 from 600 up; restated here so
             // the tablet bar keeps the height the rest of the header is measured against.

@@ -6,8 +6,10 @@ import {
   brandSurfaces,
   footerPalette,
   headerPalette,
+  pageColors,
   type BrandColors,
 } from "@/app/theme/brand";
+import { brandDefaults } from "@/app/theme/colors";
 
 type PreviewThemeOptions = {
   primary?: string | null;
@@ -64,11 +66,18 @@ export function createPreviewTheme(input: CreatePreviewThemeInput): Theme {
    * secondary and text the base theme supplies — otherwise half the chrome follows the
    * brand and half does not.
    */
+  /*
+   * `text` falls back to the customer default and not to the base palette, because in this
+   * theme the base palette no longer holds the customer's choice: it holds what `readable()`
+   * made of it. Feeding that back in would mean deriving from a derivation.
+   */
   const brand: BrandColors = {
     primary: primary || baseTheme.palette.primary.main,
     secondary: secondary || baseTheme.palette.secondary.main,
-    text: text || baseTheme.palette.text.primary,
+    text: text || brandDefaults.text,
   };
+
+  const page = pageColors(brand);
 
   const resolvedBody = fontFamily(fontBody, baseTheme.typography.fontFamily);
 
@@ -98,12 +107,26 @@ export function createPreviewTheme(input: CreatePreviewThemeInput): Theme {
         },
       }),
 
-      ...(text && {
-        text: {
-          ...baseTheme.palette.text,
-          primary: text,
-        },
-      }),
+      /*
+       * The customer's text colour never reaches the page raw. It is picked for a white
+       * background — the demo ships `#111111` — and set literally here it would be black
+       * on near-black for every customer who touches it.
+       *
+       * The ground moves too: it is derived from secondary, so a customer who changes
+       * secondary and does not get a new background is looking at a page frozen on the
+       * default while everything else follows them.
+       */
+      background: {
+        ...baseTheme.palette.background,
+        default: page.background,
+        paper: page.paper,
+      },
+
+      text: {
+        ...baseTheme.palette.text,
+        primary: page.text,
+        secondary: page.textSecondary,
+      },
 
       // Kept in step with src/theme.ts — see the note at the top of app/theme/brand.ts.
       header: headerPalette(brand),

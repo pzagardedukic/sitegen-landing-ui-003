@@ -53,6 +53,67 @@ export function brandGradient(primary: string, secondary: string, angle = "135de
   return `linear-gradient(${angle}, ${primary} 0%, ${end} 100%)`;
 }
 
+/*
+ * The page a customer's colours land on is dark here, and that changes what one of those
+ * colours can mean.
+ *
+ * `theme.colors.text` is picked for a white page — the demo ships `#111111`. Taken at face
+ * value on a dark ground it is black on near-black, and every customer's site would be
+ * unreadable. So the choice is kept as a hue and the lightness is supplied: `readable()`
+ * returns the customer's colour carried up to something that can be read here.
+ *
+ * A grey choice, which most are, has no hue to keep and simply comes back near-white.
+ */
+function readable(color: string, target = 0.93): string {
+  try {
+    const [red, green, blue] = decomposeColor(color).values;
+    const maximum = Math.max(red, green, blue);
+
+    if (maximum < 8) return `rgb(238, 238, 240)`;
+
+    const scale = (target * 255) / maximum;
+    const lift = (channel: number) => Math.min(255, Math.round(channel * scale));
+
+    /* Hue survives, but only a whisper of it: strong colour as body text is exhausting. */
+    const grey = 0.299 * red + 0.587 * green + 0.114 * blue;
+    const mixed = (channel: number) => Math.round(channel + (grey - channel) * 0.7);
+
+    return `rgb(${lift(mixed(red))}, ${lift(mixed(green))}, ${lift(mixed(blue))})`;
+  } catch {
+    return "rgb(238, 238, 240)";
+  }
+}
+
+/**
+ * The page itself: a near-black that still belongs to the customer.
+ *
+ * Derived from secondary and pulled almost all the way to its own grey, the same way the
+ * header bar is, so a blue brand does not turn the whole site navy. It is not pure black —
+ * a photograph on pure black reads as a hole, and the cards need somewhere to sit.
+ */
+function pageBase({ secondary }: BrandColors): string {
+  const veryDark = darken(getLuminance(secondary) > 0.02 ? secondary : "#202020", 0.9);
+  return desaturate(veryDark, 0.9);
+}
+
+/**
+ * The ground of the page and the type on it.
+ *
+ * `paper` is a step above the page rather than a step below, which is the opposite of the
+ * light theme: on a dark ground a card has to come towards the reader to read as a card.
+ */
+export function pageColors(brand: BrandColors) {
+  const base = pageBase(brand);
+  const readableText = readable(brand.text);
+
+  return {
+    background: base,
+    paper: lighten(base, 0.07),
+    text: readableText,
+    textSecondary: alpha(readableText, 0.66),
+  };
+}
+
 /** Pull a colour towards its own grey. 1 lands on the grey, 0 leaves the colour alone. */
 function desaturate(color: string, amount: number): string {
   try {
@@ -77,9 +138,14 @@ function desaturate(color: string, amount: number): string {
  * the way to its own grey, so the bar is near-neutral but still shifts with the customer's
  * colours instead of being a hardcoded black.
  */
-export function headerPalette({ primary, secondary }: BrandColors) {
+export function headerPalette(brand: BrandColors) {
+  const { primary, secondary } = brand;
   const dark = getLuminance(secondary) > 0.16 ? darken(secondary, 0.74) : secondary;
-  const base = desaturate(dark, 0.85);
+  /*
+   * On a dark page the bar cannot be the same near-black as the page behind it, or the
+   * scrolled state is invisible: it has to sit slightly above the page, not below it.
+   */
+  const base = lighten(desaturate(dark, 0.85), 0.06);
 
   return {
     background: alpha(base, 0.92),
@@ -97,27 +163,50 @@ export function headerPalette({ primary, secondary }: BrandColors) {
   };
 }
 
-/** Footer chrome, kept light and quiet: a wash of the brand rather than a slab of it. */
-export function footerPalette({ secondary, text }: BrandColors) {
-  const base = getLuminance(secondary) > 0.75 ? darken(secondary, 0.1) : secondary;
+/**
+ * Footer chrome. In the light theme this is a pale wash of the brand; here it is the one
+ * band that lifts slightly off the page instead, so the foot of the site still reads as a
+ * separate place without a bright slab at the bottom of a dark page.
+ */
+export function footerPalette(brand: BrandColors) {
+  const readableText = readable(brand.text);
 
   return {
-    background: lighten(base, 0.94),
+    background: lighten(pageBase(brand), 0.05),
     text: {
-      primary: text,
-      secondary: alpha(text, 0.62),
+      primary: readableText,
+      secondary: alpha(readableText, 0.62),
     },
   };
 }
 
 /** Tints used for section washes, card borders and image scrims. */
-export function brandSurfaces({ primary, text }: BrandColors) {
+export function brandSurfaces(brand: BrandColors) {
+  const readableText = readable(brand.text);
+
   return {
-    tint: alpha(primary, 0.06),
-    border: alpha(text, 0.12),
-    /** Design system: photographs carry a flat black overlay at 60 %, white copy above it. */
-    scrim: alpha("#000000", 0.6),
-    /** Neutral stand-in shown where a photograph is missing. */
-    placeholder: "#A8A8B0",
+    /* 0.06 of the brand is invisible on a dark ground; a wash has to be worth seeing. */
+    tint: alpha(brand.primary, 0.14),
+    /* Same reasoning: a line at 0.12 of near-white disappears, at 0.18 it is a line. */
+    border: alpha(readableText, 0.18),
+    /*
+     * Design system: photographs carry a flat black overlay, white copy above it. On a
+     * white page 60 % gave depth; on a dark one an unchanged photograph becomes the
+     * brightest thing on the screen and pulls the eye off the words, so it goes deeper.
+     */
+    scrim: alpha("#000000", 0.72),
+    /* Neutral stand-in shown where a photograph is missing — dark, or it flashes. */
+    placeholder: "#33363B",
+    /*
+     * The light plate the logo sits on: the notch cut out of the hero, and the fillets that
+     * carry it back into the card edge.
+     *
+     * It stays light in the dark theme. A customer's logo is artwork of unknown colour and
+     * is usually dark, and a light plate is the one background that shows any of them. The
+     * light theme has the same value, where it is simply the page colour.
+     */
+    plate: "#FFFFFF",
+    /* What can be read on that plate — the site name when a customer has no logo file. */
+    onPlate: "#111111",
   };
 }

@@ -27,6 +27,8 @@ declare module "@mui/material/styles" {
       border: string;
       scrim: string;
       placeholder: string;
+      plate: string;
+      onPlate: string;
     };
   }
 
@@ -52,6 +54,8 @@ declare module "@mui/material/styles" {
       border?: string;
       scrim?: string;
       placeholder?: string;
+      plate?: string;
+      onPlate?: string;
     };
   }
 
