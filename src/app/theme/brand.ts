@@ -111,6 +111,11 @@ export function pageColors(brand: BrandColors) {
     /* The Figma ladder: page #111114, card #17171c, plate #191920. Three close steps. */
     paper: lighten(base, 0.03),
     text: readableText,
+    /*
+     * Figma runs two muted greys — `#d5d5d6` for body copy inside a card and `#ababb8` for
+     * labels and captions. One value has to serve both here, and it goes to the body: that
+     * is the text people read, and the labels can afford to be a shade brighter than drawn.
+     */
     textSecondary: alpha(readableText, 0.84),
   };
 }
@@ -189,20 +194,27 @@ export function brandSurfaces(brand: BrandColors) {
     /* 0.06 of the brand is invisible on a dark ground; a wash has to be worth seeing. */
     tint: alpha(brand.primary, 0.1),
     /*
-     * Almost nothing. In the Figma dark frames a card has no outline at all: it is told
-     * apart from the page by being a step lighter than it, and a drawn line would be a
-     * second, competing edge. This is kept only for the places where a border is the
-     * shape rather than decoration — form fields, the input on the newsletter band.
+     * `rgba(255,255,255,0.22)`, straight from the Figma dark contact frame, where it draws
+     * the panel and every field in it.
+     *
+     * I first read a services frame, saw cards with no outline, and set this to almost
+     * nothing. That was reading one frame as if it were the rule: content cards are indeed
+     * told apart by being a step lighter than the page, but forms are drawn with a line,
+     * and at 0.1 the fields would have been all but invisible.
      */
-    border: alpha(readableText, 0.1),
+    border: alpha(readableText, 0.22),
     /*
      * Design system: photographs carry a flat black overlay, white copy above it. On a
      * white page 60 % gave depth; on a dark one an unchanged photograph becomes the
      * brightest thing on the screen and pulls the eye off the words, so it goes deeper.
      */
     scrim: alpha("#000000", 0.72),
-    /* Neutral stand-in shown where a photograph is missing — dark, or it flashes. */
-    placeholder: "#33363B",
+    /*
+     * Neutral stand-in where a photograph is missing. `#22222c` in Figma, which is the
+     * block the map sits in when a customer has not enabled one — dark enough not to flash,
+     * light enough to read as a shape rather than a hole.
+     */
+    placeholder: lighten(pageBase(brand), 0.07),
     /*
      * The plate the logo sits on: the notch cut out of the hero, and the fillets that carry
      * it back into the card edge.
