@@ -8,7 +8,7 @@ interface LogoTextProps {
   name: string;
 }
 
-/* Hung on the notch exactly as the artwork is — see LogoImage. */
+/* Hung on the bar exactly as the artwork is — see LogoImage. */
 function LogoText({ name }: LogoTextProps) {
   return (
     <Box
@@ -31,9 +31,10 @@ function LogoText({ name }: LogoTextProps) {
         sx={(theme) => ({
           letterSpacing: "-0.2px",
           /*
-           * Dark on the white notch, white once the bar is a dark slab. Colour rather than
+           * White throughout: the name lies on the hero photograph, then on the dark bar.
+           * Colour rather than
            * the artwork's filter: type can simply be given the right colour, and inheriting
-           * the bar's own white left the name invisible against the notch.
+           * inheriting a colour from the bar is how the name went invisible once before.
            */
           color: "var(--logo-color)",
           transition: theme.transitions.create(["opacity", "color"], {

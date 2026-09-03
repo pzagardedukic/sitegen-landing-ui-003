@@ -3,7 +3,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { useBannerImage } from "@/app/theme/utils/UseBannerImage";
-import HeroNotch from "../home/HeroNotch";
 
 export type HeaderSectionProps = {
   title: string;
@@ -19,7 +18,7 @@ export type HeaderSectionProps = {
 /*
  * The title band that opens every subpage, from the Figma frame (1440x440): the same
  * construction as the hero but shorter — the photograph in a card inset 20px with a 25
- * radius, a flat black overlay at 60 %, the white notch carrying the site logo, and the page
+ * radius, a flat black overlay at 60 %, and the page
  * title centred inside.
  *
  * It draws its own card rather than sitting inside a Section with a full-bleed background,
@@ -75,8 +74,6 @@ export default function HeaderSection({ title, id }: HeaderSectionProps) {
           </Typography>
         </Box>
       </Box>
-
-      <HeroNotch />
     </Box>
   );
 }

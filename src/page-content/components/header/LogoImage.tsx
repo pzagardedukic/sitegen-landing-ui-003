@@ -12,10 +12,10 @@ interface LogoImageProps {
 /*
  * The logo is hung on the AppBar rather than carried in the header row.
  *
- * In the row it inherited the content grid and started 144px in on a 1440 screen, which is
- * near the middle of the 350-wide notch drawn for it — the notch itself begins 20px from
- * the page edge. Position and size now come from the bar as --logo-x / --logo-y, so the
- * artwork sits where the notch is instead of where the text column happens to start.
+ * In the row it inherited the content grid and started 144px in on a 1440 screen — most of
+ * the way across the hero before the artwork began. Position and size now come from the bar
+ * as --logo-x / --logo-y, so it sits against the corner of the hero card instead of where
+ * the text column happens to start.
  */
 function LogoImage({ imageSrc, name }: LogoImageProps) {
   return (
@@ -38,8 +38,8 @@ function LogoImage({ imageSrc, name }: LogoImageProps) {
         Sized in pixels, not as a percentage of the bar.
         A logo is customer-supplied artwork of unknown proportions — the demo data ships
         a 1536x540 image — so a percentage height only works while some ancestor happens to
-        have a resolved height. Capping both dimensions keeps any logo inside the notch:
-        at md the notch is 350x102 and the artwork lands at 171x60.
+        have a resolved height. Capping both dimensions keeps any logo to a sensible size:
+        at md the artwork lands at 171x60.
       */}
       <Box
         component="img"

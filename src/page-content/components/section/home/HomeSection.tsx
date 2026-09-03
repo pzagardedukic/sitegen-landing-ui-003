@@ -9,14 +9,13 @@ import { getButtonTranslation } from "@/core/translations";
 import { getPageSlugByKey } from "@/core/static";
 import GradientButton from "@/components/button/GradientButton";
 import ScrollLink from "@/components/button/ScrollLink";
-import HeroNotch from "./HeroNotch";
 
 /*
  * Hero, laid out from the Figma frame (1440x900):
  *   - the photograph sits in a card inset 20px from the frame edge, radius 25;
  *   - copy is left-aligned on the page's own margin — 120px on desktop, which is 100px
  *     in from the card edge — and sits in the upper third, not centred;
- *   - a white notch in the card's top-left corner carries the site logo;
+ *   - no notch: the card is a plain rounded rectangle and the logo lies on the photograph;
  *   - the scroll cue is centred at the bottom of the card.
  *
  * The card inset is the only place in the theme that uses one, per the design system.
@@ -91,7 +90,11 @@ export default function HomeSection() {
           }}
         >
           <Box sx={{ maxWidth: 900 }}>
-            <Typography variant="h1" component="h1" sx={{ mb: { xs: 3, md: 4 } }}>
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{ mb: { xs: 3, md: 4 } }}
+            >
               {home.name}
             </Typography>
 
@@ -132,8 +135,6 @@ export default function HomeSection() {
           />
         </Box>
       </Box>
-
-      <HeroNotch />
     </Box>
   );
 }

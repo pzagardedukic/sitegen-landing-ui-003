@@ -225,17 +225,5 @@ export function brandSurfaces(brand: BrandColors) {
      * the one place where dark needs a shape the light theme does not have.
      */
     logoTile: lighten(pageBase(brand), 0.07),
-    /*
-     * The plate the logo sits on: the notch cut out of the hero, and the fillets that carry
-     * it back into the card edge.
-     *
-     * In Figma's dark frames it is not the white plate of the light theme but the top step
-     * of the ladder — barely above the card, a shape you notice rather than a patch of
-     * light. The logo turns white on it, which is what the header already does to the
-     * artwork on the scrolled bar.
-     */
-    plate: lighten(pageBase(brand), 0.05),
-    /* What is read on that plate: the site name, for a customer with no logo file. */
-    onPlate: "#FFFFFF",
   };
 }

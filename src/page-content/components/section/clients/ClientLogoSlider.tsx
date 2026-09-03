@@ -28,7 +28,9 @@ export default function ClientLogoSlider({
   if (clients.length === 0) return null;
 
   return (
-    <Box sx={{ position: "relative", overflow: "hidden", py: { xs: 4, md: 6 } }}>
+    <Box
+      sx={{ position: "relative", overflow: "hidden", py: { xs: 4, md: 6 } }}
+    >
       <Marquee speed={speed} gradient={false} autoFill pauseOnHover>
         {clients.map((client, index) => (
           <Box

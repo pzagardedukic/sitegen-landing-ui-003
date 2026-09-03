@@ -2,7 +2,9 @@
  * The header's geometry, in one place because two files need to agree on it.
  *
  * CENTRE is the line the logo and the navigation are both hung on: the middle of the hero's
- * white notch, which starts 12/24/20 below the top of the page and is 64/82/102 tall.
+ * hero card, which is inset 12/24/20 from the page edge. The light theme cuts a notch
+ * into that corner for the logo; this one leaves the card whole and lays the logo on the
+ * photograph, but keeps the same numbers so the header sits identically in both.
  * HEIGHT is twice that, so the same line is also the middle of the bar and nothing moves
  * when the transparent bar turns into a solid one on scroll.
  *

@@ -88,7 +88,7 @@ export default function Header() {
       // The logo is positioned on the bar itself, so only the navigation is in this row.
       justifyContent="flex-end"
     >
-      {/* Left: Logo, hung on the notch rather than on this row */}
+      {/* Left: Logo, hung on the bar rather than carried in this row */}
       {home.logo.image ? (
         <LogoImage imageSrc={home.logo.image} name={home.name} />
       ) : (
@@ -100,7 +100,7 @@ export default function Header() {
         sx={(theme) => ({
           /*
            * Hung on the bar like the logo, not carried in the row. In the row it centred
-           * on the bar, which is not the middle of the white notch, so it sat higher than
+           * on the bar rather than on the shared line, so it sat higher than
            * the logo across from it. Same `--logo-y`, same centre line.
            */
           position: "fixed",
