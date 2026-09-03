@@ -77,7 +77,12 @@ export default function HeaderLayout({
           "--logo-y": `${HEADER_CENTRE.xs}px`,
           "--logo-x": "16px",
           "--nav-x": "24px",
-          "--logo-filter": scrolled ? "brightness(0) invert(1)" : "none",
+          /*
+           * White at every scroll position, unlike the light theme where the artwork is
+           * only inverted once the bar goes dark. Here the plate under the logo is dark
+           * too, so there is no state in which the customer's own colours would read.
+           */
+          "--logo-filter": "brightness(0) invert(1)",
           /*
            * For a customer who uploaded no logo, where the site name is set as type rather
            * than artwork. It cannot take the bar's own colour: unscrolled the bar is

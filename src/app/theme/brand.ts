@@ -64,7 +64,7 @@ export function brandGradient(primary: string, secondary: string, angle = "135de
  *
  * A grey choice, which most are, has no hue to keep and simply comes back near-white.
  */
-function readable(color: string, target = 0.93): string {
+function readable(color: string, target = 1): string {
   try {
     const [red, green, blue] = decomposeColor(color).values;
     const maximum = Math.max(red, green, blue);
@@ -92,8 +92,8 @@ function readable(color: string, target = 0.93): string {
  * a photograph on pure black reads as a hole, and the cards need somewhere to sit.
  */
 function pageBase({ secondary }: BrandColors): string {
-  const veryDark = darken(getLuminance(secondary) > 0.02 ? secondary : "#202020", 0.9);
-  return desaturate(veryDark, 0.9);
+  const veryDark = darken(getLuminance(secondary) > 0.02 ? secondary : "#202020", 0.84);
+  return desaturate(veryDark, 0.86);
 }
 
 /**
@@ -108,9 +108,10 @@ export function pageColors(brand: BrandColors) {
 
   return {
     background: base,
-    paper: lighten(base, 0.07),
+    /* The Figma ladder: page #111114, card #17171c, plate #191920. Three close steps. */
+    paper: lighten(base, 0.03),
     text: readableText,
-    textSecondary: alpha(readableText, 0.66),
+    textSecondary: alpha(readableText, 0.84),
   };
 }
 
@@ -186,9 +187,14 @@ export function brandSurfaces(brand: BrandColors) {
 
   return {
     /* 0.06 of the brand is invisible on a dark ground; a wash has to be worth seeing. */
-    tint: alpha(brand.primary, 0.14),
-    /* Same reasoning: a line at 0.12 of near-white disappears, at 0.18 it is a line. */
-    border: alpha(readableText, 0.18),
+    tint: alpha(brand.primary, 0.1),
+    /*
+     * Almost nothing. In the Figma dark frames a card has no outline at all: it is told
+     * apart from the page by being a step lighter than it, and a drawn line would be a
+     * second, competing edge. This is kept only for the places where a border is the
+     * shape rather than decoration — form fields, the input on the newsletter band.
+     */
+    border: alpha(readableText, 0.1),
     /*
      * Design system: photographs carry a flat black overlay, white copy above it. On a
      * white page 60 % gave depth; on a dark one an unchanged photograph becomes the
@@ -198,15 +204,16 @@ export function brandSurfaces(brand: BrandColors) {
     /* Neutral stand-in shown where a photograph is missing — dark, or it flashes. */
     placeholder: "#33363B",
     /*
-     * The light plate the logo sits on: the notch cut out of the hero, and the fillets that
-     * carry it back into the card edge.
+     * The plate the logo sits on: the notch cut out of the hero, and the fillets that carry
+     * it back into the card edge.
      *
-     * It stays light in the dark theme. A customer's logo is artwork of unknown colour and
-     * is usually dark, and a light plate is the one background that shows any of them. The
-     * light theme has the same value, where it is simply the page colour.
+     * In Figma's dark frames it is not the white plate of the light theme but the top step
+     * of the ladder — barely above the card, a shape you notice rather than a patch of
+     * light. The logo turns white on it, which is what the header already does to the
+     * artwork on the scrolled bar.
      */
-    plate: "#FFFFFF",
-    /* What can be read on that plate — the site name when a customer has no logo file. */
-    onPlate: "#111111",
+    plate: lighten(pageBase(brand), 0.05),
+    /* What is read on that plate: the site name, for a customer with no logo file. */
+    onPlate: "#FFFFFF",
   };
 }
