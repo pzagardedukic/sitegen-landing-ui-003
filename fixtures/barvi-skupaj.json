@@ -1,0 +1,11 @@
+{
+  "description": "Primarna in sekundarna barva sta skoraj enaki; prelivanje bi se moralo resiti samo.",
+  "patch": {
+    "theme": {
+      "colors": {
+        "primary": "#8258C8",
+        "secondary": "#8A62CC"
+      }
+    }
+  }
+}

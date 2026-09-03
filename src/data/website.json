@@ -1,0 +1,124 @@
+{
+  "general": {
+    "primaryLanguage": "SL",
+    "supportedLanguages": [
+      "EN"
+    ]
+  },
+  "home": {
+    "websiteName": {
+      "SL": "Reforma Pilates",
+      "EN": "Reforma Pilates"
+    },
+    "slogan": {
+      "SL": "Studio za reformer in matt pilates v Ljubljani. Majhne skupine, vadba po meri telesa in inštruktorji, ki popravljajo vsak gib.",
+      "EN": "A reformer and mat Pilates studio in Ljubljana. Small groups, training shaped to your body, and instructors who correct every movement."
+    },
+    "companyLogo": {
+      "text": "REFORMA",
+      "file": "/images/logo-reforma.png"
+    }
+  },
+  "contactInfo": {
+    "company": {
+      "name": "Reforma Pilates demo d.o.o.",
+      "country": "Slovenia",
+      "address": "Poljanski nasip 24",
+      "postalCode": "1000",
+      "postalOffice": "Ljubljana"
+    },
+    "contact": [
+      {
+        "type": "PHONE",
+        "value": "+386 1 555 01 24"
+      },
+      {
+        "type": "EMAIL",
+        "value": "pozdravljeni@reforma-pilates.example"
+      },
+      {
+        "type": "WEBSITE",
+        "value": "https://reforma-pilates.example"
+      },
+      {
+        "type": "INSTAGRAM",
+        "value": "https://instagram.com/reforma.pilates.example"
+      },
+      {
+        "type": "LINKEDIN",
+        "value": "https://www.linkedin.com/company/example"
+      },
+      {
+        "type": "FACEBOOK",
+        "value": "https://facebook.com/reforma.pilates.example"
+      }
+    ]
+  },
+  "optionalSections": {
+    "team": true,
+    "experience": true,
+    "reviews": true,
+    "portfolio": true,
+    "gallery": true,
+    "clients": true,
+    "services": true,
+    "blog": true,
+    "videos": true,
+    "catalogues": true,
+    "pricing": true,
+    "careers": true,
+    "subscribe": true,
+    "faq": true,
+    "schedule": true,
+    "events": true
+  },
+  "blog": {
+    "slugs": [
+      "1-zakaj-vas-po-prvi-uri-boli-tam-kjer-niste-pricakovali",
+      "2-nevtralna-medenica-najbolj-ponavljano-navodilo-v-dvorani",
+      "3-koliko-vzmeti-je-prav-in-zakaj-vec-ni-tezje",
+      "4-dvakrat-tedensko-je-meja-pod-katero-se-ne-pozna",
+      "5-vrnitev-k-vadbi-po-porodu-prvih-sest-tednov"
+    ]
+  },
+  "portfolio": {
+    "slugs": [
+      "1-reformer-za-zacetnike",
+      "2-reformer-nadaljevalni",
+      "3-jutranji-matt-pilates",
+      "4-pilates-za-pisarnisko-telo",
+      "5-pilates-po-poskodbi",
+      "6-nosecniski-in-poporodni-pilates"
+    ]
+  },
+  "pricing": {
+    "slugs": [
+      "1-clanstvo-4-mesecno",
+      "2-clanstvo-8-mesecno",
+      "3-neomejeno-clanstvo",
+      "4-jutranje-clanstvo",
+      "5-paket-10-ur",
+      "6-paket-20-ur",
+      "7-posamezna-ura",
+      "8-individualna-ura",
+      "9-individualno-v-paru",
+      "10-program-za-podjetja"
+    ]
+  },
+  "careers": {
+    "slugs": [
+      "1-instruktor-oziroma-instruktorica-reformer-pilatesa",
+      "2-instruktor-za-rehabilitacijski-program",
+      "3-vodja-recepcije-in-clanstev"
+    ]
+  },
+  "events": {
+    "slugs": [
+      "1-dihanje-in-globoke-trebusne-misice",
+      "2-pilates-za-tekace-kolki-in-stopala",
+      "3-kaj-se-zgodi-s-telesom-po-porodu",
+      "4-odprti-dan-reformer-brez-rezervacije",
+      "5-ergonomija-pisarne-in-vaje-med-delom"
+    ]
+  }
+}

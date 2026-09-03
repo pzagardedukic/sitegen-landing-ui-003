@@ -1,0 +1,12 @@
+{
+  "description": "Pisavi iz drugega nabora; tipografska lestvica in dolzine vrstic.",
+  "patch": {
+    "theme": {
+      "fonts": {
+        "heading": "Playfair Display",
+        "body": "Inter",
+        "banner": "Playfair Display"
+      }
+    }
+  }
+}

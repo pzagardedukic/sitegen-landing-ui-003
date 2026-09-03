@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+*.tgz
+.env*.local
+.DS_Store
+tsconfig.tsbuildinfo
+fixtures/out/
+fixtures/shots/
+fixtures/report.json
+fixtures/.website-json-backup

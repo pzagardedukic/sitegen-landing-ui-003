@@ -1,0 +1,13 @@
+# pnpm 10+ reads settings from here instead of the "pnpm" field in package.json.
+# These four packages ship postinstall scripts; approving them explicitly keeps
+# `pnpm install` reproducible and stops ERR_PNPM_IGNORED_BUILDS from failing every
+# script run. All four come from the Next.js / ESLint toolchain:
+#   esbuild         - required by tsx, which runs the prebuild data and page scripts
+#   unrs-resolver   - module resolver used by eslint-config-next
+#   sharp           - Next image optimization (unused here: output "export" + unoptimized)
+#   @parcel/watcher - optional file watcher used in development
+allowBuilds:
+  "@parcel/watcher": true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true

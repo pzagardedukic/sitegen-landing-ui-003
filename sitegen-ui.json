@@ -1,0 +1,9 @@
+{
+  "siteType": "landing",
+  "uiId": "003",
+  "core": {
+    "package": "@ptlabTadej/sitegen-landing-core",
+    "compatibleMajor": 1,
+    "testedVersion": "1.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "description": "Sekundarna barva je skoraj crna. Glava ob drsenju in prelivanje.",
+  "patch": {
+    "theme": {
+      "colors": {
+        "secondary": "#111111"
+      }
+    }
+  }
+}

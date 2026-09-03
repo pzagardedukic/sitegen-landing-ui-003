@@ -1,0 +1,17 @@
+{
+  "description": "Stranka je pustila prizgane samo osnovne sekcije. Meni Vec se skrci, poti izginejo.",
+  "patch": {
+    "optionalSections": {
+      "gallery": false,
+      "pricing": false,
+      "blog": false,
+      "videos": false,
+      "catalogues": false,
+      "careers": false,
+      "events": false,
+      "schedule": false,
+      "faq": false,
+      "reviews": false
+    }
+  }
+}

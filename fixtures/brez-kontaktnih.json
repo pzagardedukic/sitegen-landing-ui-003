@@ -1,0 +1,13 @@
+{
+  "description": "Brez zemljevida in brez katalogov; kontaktna stran mora zdrzati.",
+  "patch": {
+    "contactInfo": {
+      "map": {
+        "enabled": false
+      }
+    },
+    "optionalSections": {
+      "catalogues": false
+    }
+  }
+}

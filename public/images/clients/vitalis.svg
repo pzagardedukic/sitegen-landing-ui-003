@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 240" width="432" height="240" role="img">
+  <path d="M66 76l42 24v40l-42 24-42-24v-40z" fill="#8A2F52"/>
+  <path d="M46 120h14l6-14 8 28 6-14h14" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <text x="132" y="120" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="46" font-weight="600" letter-spacing="0.5" fill="#5C1F37" dominant-baseline="middle">Vitalis</text>
+  <text x="132" y="156" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="3.4" fill="#96707E" dominant-baseline="middle">ZAVAROVALNICA</text>
+</svg>

@@ -1,0 +1,52 @@
+{
+  "name": "sitegen-landing-ui-003",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing UI 003 for the Sitegen landing core contract: the dark counterpart of UI 002.",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "prebuild": "tsx scripts/generateWebsiteData.ts && tsx scripts/generatePages.ts",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "update:website-data": "tsx scripts/updateWebsiteData.ts",
+    "check:boundary": "node scripts/checkCoreBoundary.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify": "pnpm run check:boundary && pnpm run typecheck",
+    "test:variants": "node scripts/testVariants.mjs"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@ptlabTadej/sitegen-landing-core": "1.0.0",
+    "framer-motion": "^12.26.1",
+    "next": "16.2.4",
+    "photoswipe": "^5.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-fast-marquee": "^1.6.5",
+    "react-photoswipe-gallery": "^3.1.1",
+    "sass": "^1.89.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "sharp": "^0.35.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  },
+  "sitegen": {
+    "siteType": "landing",
+    "uiId": "003",
+    "corePackage": "@ptlabTadej/sitegen-landing-core",
+    "coreCompatibility": "1.x",
+    "testedCoreVersion": "1.0.0"
+  }
+}

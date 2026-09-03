@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 240" width="432" height="240" role="img">
+  <path d="M24 132c14-14 28-14 42 0s28 14 42 0" stroke="#1D5FA8" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <path d="M24 160c14-14 28-14 42 0s28 14 42 0" stroke="#7FB2E0" stroke-width="13" stroke-linecap="round" fill="none"/>
+  <text x="132" y="120" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="3.2" fill="#123F72" dominant-baseline="middle">VRELEC</text>
+  <text x="132" y="156" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="3.4" fill="#6987A8" dominant-baseline="middle">TERME IN OKREVANJE</text>
+</svg>

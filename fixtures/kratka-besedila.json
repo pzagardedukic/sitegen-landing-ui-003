@@ -1,0 +1,10 @@
+{
+  "description": "Najmanjsa smiselna vsebina: ena storitev, en program, brez mnenj.",
+  "patch": {
+    "optionalSections": {
+      "reviews": false,
+      "events": false,
+      "careers": false
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 240" width="432" height="240" role="img">
+  <rect x="24" y="78" width="84" height="84" rx="26" fill="#2B4C8C"/>
+  <path d="M48 138c14-6 14-30 36-36" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <text x="132" y="120" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="2.4" fill="#1B2F57" dominant-baseline="middle">ORTOPLAN</text>
+  <text x="132" y="156" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="3.4" fill="#63739A" dominant-baseline="middle">FIZIOTERAPIJA</text>
+</svg>

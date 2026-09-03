@@ -1,0 +1,12 @@
+{
+  "description": "Ime studia in naslovi sekcij so precej daljsi od demo vsebine.",
+  "patch": {
+    "home": {
+      "name": "Reforma Pilates in Gibalna Terapija Ljubljana Center",
+      "slogan": {
+        "SL": "Studio za reformer in matt pilates, gibalno terapijo, rehabilitacijo po poskodbah in pripravo na sezono, z majhnimi skupinami in individualno obravnavo vsakega clana.",
+        "EN": "A studio for reformer and matt pilates, movement therapy, rehabilitation after injury and pre-season preparation, with small groups and individual attention for every member."
+      }
+    }
+  }
+}

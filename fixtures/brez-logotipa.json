@@ -1,0 +1,10 @@
+{
+  "description": "Stranka ni nalozila logotipa, zato je ime v glavi izpisano kot besedilo.",
+  "patch": {
+    "home": {
+      "companyLogo": {
+        "image": null
+      }
+    }
+  }
+}

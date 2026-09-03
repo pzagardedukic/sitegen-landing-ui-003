@@ -1,0 +1,8 @@
+{
+  "description": "Stran ima samo primarni jezik; jezikovni izbirnik in locilna crta odpadeta.",
+  "patch": {
+    "general": {
+      "supportedLanguages": []
+    }
+  }
+}

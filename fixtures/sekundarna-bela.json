@@ -1,0 +1,10 @@
+{
+  "description": "Sekundarna barva je skoraj bela. Kontrast belega besedila v glavi.",
+  "patch": {
+    "theme": {
+      "colors": {
+        "secondary": "#F5F5F5"
+      }
+    }
+  }
+}
