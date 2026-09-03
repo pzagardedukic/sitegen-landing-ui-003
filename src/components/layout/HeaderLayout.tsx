@@ -12,7 +12,7 @@ type HeaderLayoutProps = {
  * The bar carries no content container and nothing sits in its row: the logo hangs off the
  * left edge and the navigation off the right, both positioned against the bar itself. A
  * Container would have held the navigation on the 36 / 64 / 120 content grid, which at 1440
- * leaves it 144 from the edge against the logo's 24 and reads lopsided.
+ * leaves it 144 from the edge while the logo stands at 48, and reads lopsided.
  *
  * Both are hung on the same `--logo-y`, so they share a centre line. In the row the
  * navigation centred on the bar instead and sat visibly higher than the logo beside it.
@@ -44,14 +44,15 @@ export default function HeaderLayout({
            * it, sharing `--logo-y` as their centre line, so the three variables below are
            * the whole geometry of the header.
            *
-           * `--logo-y` and `--logo-x` come from the hero card, which is inset 12/24/20 from
-           * the page edge. The light theme cuts a notch into its top-left corner for the
-           * logo; this one does not — the card is a plain rounded rectangle and the logo
-           * lies on the photograph itself. The numbers are kept so the two themes place
-           * the header identically:
+           * `--logo-y` comes from the hero card, which is inset 12/24/20 from the page edge:
            *
            *   y   xs 44      sm 65      md 71
-           *   x   xs 16      sm 28      md 24     (the card inset plus four)
+           *
+           * `--logo-x` matches `--nav-x` exactly, so the logo stands as far from the left
+           * edge as the language selector does from the right. In the light theme the logo
+           * is pinned four pixels inside the white notch and cannot be moved without
+           * leaving it; here there is no notch, nothing to align to, and the two ends of
+           * the bar can simply agree.
            *
            * None of it changes when the page scrolls, and the bar is twice `--logo-y` tall
            * so that centre is also the middle of the bar. That is the point: the slab
@@ -65,7 +66,7 @@ export default function HeaderLayout({
            */
           minHeight: HEADER_HEIGHT.xs,
           "--logo-y": `${HEADER_CENTRE.xs}px`,
-          "--logo-x": "16px",
+          "--logo-x": "24px",
           "--nav-x": "24px",
           /*
            * White at every scroll position, unlike the light theme, which only inverts the
@@ -87,13 +88,13 @@ export default function HeaderLayout({
             // the tablet bar keeps the height the rest of the header is measured against.
             minHeight: HEADER_HEIGHT.sm,
             "--logo-y": `${HEADER_CENTRE.sm}px`,
-            "--logo-x": "28px",
+            "--logo-x": "40px",
             "--nav-x": "40px",
           },
           [theme.breakpoints.up("md")]: {
             minHeight: HEADER_HEIGHT.md,
             "--logo-y": `${HEADER_CENTRE.md}px`,
-            "--logo-x": "24px",
+            "--logo-x": "48px",
             "--nav-x": "48px",
           },
           transition: theme.transitions.create(["min-height"], {
