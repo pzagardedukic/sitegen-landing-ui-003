@@ -191,8 +191,25 @@ export function brandSurfaces(brand: BrandColors) {
   const readableText = readable(brand.text);
 
   return {
-    /* 0.06 of the brand is invisible on a dark ground; a wash has to be worth seeing. */
+    /*
+     * The wash, and only the wash: marquee bands, badges, filter chips. It is a tenth of
+     * the brand colour, which on a white page also made a perfectly good card — and that is
+     * how it came to be painting cards here, where a tenth of anything on near-black is
+     * nothing at all. Cards now use  below; this went back to being a wash.
+     */
     tint: alpha(brand.primary, 0.1),
+    /*
+     * The ground of a card, a form, a panel. A card is a card because it lifts off the page,
+     * and on a dark page that lift has to be paid for in light: the step here is about twice
+     * what the Figma dark frames draw, deliberately. Figma was read from a rendering; the
+     * site is read on a screen, and at this end of the scale the screen decides.
+     */
+    card: lighten(pageBase(brand), 0.075),
+    /*
+     * One step above a card, for what has to sit on top of one: a field inside a form, the
+     * head of a table. Without it a field on a card is the same colour as the card.
+     */
+    raised: lighten(pageBase(brand), 0.125),
     /*
      * `rgba(255,255,255,0.22)`, straight from the Figma dark contact frame, where it draws
      * the panel and every field in it.

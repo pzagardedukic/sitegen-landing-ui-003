@@ -53,13 +53,17 @@ export default function EventPreviewCard({
         position: "relative",
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
+        backgroundColor: theme.palette.surfaces.card,
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         height: "100%",
         opacity: isCancelled ? 0.82 : 1,
         transition: theme.transitions.create(["border-color"]),
-        "&:hover": { borderColor: theme.palette.primary.main },
+        "&:hover": {
+          borderColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.surfaces.raised,
+        },
       })}
     >
       {(isCancelled || relativeDayLabel) && (

@@ -174,7 +174,7 @@ export default function ContactForm({ subject }: ContactFormProps) {
           p: { xs: "24px", md: "40px" },
           borderRadius: "25px",
           border: `1px solid ${theme.palette.surfaces.border}`,
-          backgroundColor: theme.palette.surfaces.tint,
+          backgroundColor: theme.palette.surfaces.card,
           "& .MuiOutlinedInput-root": { borderRadius: "16px" },
         })}
       >

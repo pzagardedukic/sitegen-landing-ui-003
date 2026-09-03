@@ -41,8 +41,12 @@ export default function CareerPreviewCard({
         p: { xs: "24px", md: "30px 32px" },
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
+        backgroundColor: theme.palette.surfaces.card,
         transition: theme.transitions.create("border-color"),
-        "&:hover": { borderColor: theme.palette.primary.main },
+        "&:hover": {
+          borderColor: theme.palette.primary.main,
+          backgroundColor: theme.palette.surfaces.raised,
+        },
       })}
     >
       <Box

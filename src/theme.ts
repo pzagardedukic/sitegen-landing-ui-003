@@ -24,6 +24,8 @@ declare module "@mui/material/styles" {
     brandGradient: string;
     surfaces: {
       tint: string;
+      card: string;
+      raised: string;
       border: string;
       scrim: string;
       placeholder: string;
@@ -50,6 +52,8 @@ declare module "@mui/material/styles" {
     brandGradient?: string;
     surfaces?: {
       tint?: string;
+      card?: string;
+      raised?: string;
       border?: string;
       scrim?: string;
       placeholder?: string;
@@ -233,6 +237,22 @@ const themeOptions: ThemeOptions = {
   },
 
   components: {
+    /*
+     * A field has to be a shape, not an absence.
+     *
+     * MUI leaves an outlined input transparent, which on a white page is right: the page is
+     * already the brightest thing and an outline is enough. On a dark page a transparent
+     * field takes the colour of the card it sits on, and a form becomes an outline drawing.
+     * `raised` is the one step above a card, which is what a field is.
+     */
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: ({ theme }) => ({
+          backgroundColor: theme.palette.surfaces.raised,
+        }),
+      },
+    },
+
     /*
      * Content margins from the design system: 36 mobile, 64 tablet, 120 desktop.
      * At 1440 the lg container caps content at 1200, which leaves exactly 120 a side,

@@ -44,7 +44,7 @@ export default function ExperienceItems() {
               height: { xs: 140, md: 190 },
               borderRadius: "25px",
               border: `1px solid ${theme.palette.surfaces.border}`,
-              backgroundColor: theme.palette.surfaces.tint,
+              backgroundColor: theme.palette.surfaces.card,
               display: "grid",
               placeItems: "center",
               p: 3,

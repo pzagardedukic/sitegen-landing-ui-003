@@ -41,12 +41,13 @@ export default function BlogPreviewCard({
         p: "18px",
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
+        backgroundColor: theme.palette.surfaces.card,
         textDecoration: "none",
         color: "inherit",
         transition: theme.transitions.create(["border-color", "background-color"]),
         "&:hover": {
           borderColor: theme.palette.primary.main,
-          backgroundColor: theme.palette.surfaces.tint,
+          backgroundColor: theme.palette.surfaces.raised,
         },
         "&:hover img": { transform: "scale(1.04)" },
       })}

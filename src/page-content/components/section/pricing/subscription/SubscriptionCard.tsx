@@ -75,7 +75,14 @@ export default function SubscriptionCard({ plan, onSelect }: Props) {
         flexDirection: "column",
         gap: 2,
         border: `1px solid ${highlight ? "transparent" : theme.palette.surfaces.border}`,
-        backgroundColor: highlight ? theme.palette.surfaces.tint : "transparent",
+        /*
+         * Every package is a card, not only the recommended one. Transparent worked on a
+         * white page, where an outline on white already reads as a panel; on a dark page it
+         * left five of six packages as outline drawings and only the highlighted one solid.
+         */
+        backgroundColor: highlight
+          ? theme.palette.surfaces.raised
+          : theme.palette.surfaces.card,
         ...(highlight && {
           "&::before": {
             content: '""',

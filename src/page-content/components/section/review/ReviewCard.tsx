@@ -39,7 +39,7 @@ export default function ReviewCard({ review, minHeight }: Props) {
         minHeight,
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: theme.palette.surfaces.tint,
+        backgroundColor: theme.palette.surfaces.card,
         textDecoration: "none",
         color: "inherit",
         transition: theme.transitions.create(["border-color", "transform"]),

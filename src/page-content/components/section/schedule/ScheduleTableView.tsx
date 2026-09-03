@@ -46,6 +46,7 @@ export default function ScheduleTableView({
           mt: 1,
           borderRadius: "25px",
           border: `1px solid ${theme.palette.surfaces.border}`,
+          backgroundColor: theme.palette.surfaces.card,
           overflow: "hidden",
         })}
       >
@@ -60,7 +61,7 @@ export default function ScheduleTableView({
             gap: 2,
             px: "24px",
             py: 2,
-            backgroundColor: theme.palette.surfaces.tint,
+            backgroundColor: theme.palette.surfaces.raised,
             borderBottom: `1px solid ${theme.palette.surfaces.border}`,
           })}
         >

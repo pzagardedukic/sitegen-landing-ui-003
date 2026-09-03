@@ -71,7 +71,7 @@ export default function LegalSection() {
             transition: theme.transitions.create(["border-color", "background-color"]),
             "&:hover": {
               borderColor: theme.palette.primary.main,
-              backgroundColor: theme.palette.surfaces.tint,
+              backgroundColor: theme.palette.surfaces.card,
             },
           })}
         >

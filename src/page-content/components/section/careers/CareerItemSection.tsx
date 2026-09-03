@@ -109,7 +109,7 @@ export default function CareerItemSection({ id }: { id: number }) {
           sx={(theme) => ({
             borderRadius: "25px",
             border: `1px solid ${theme.palette.surfaces.border}`,
-            backgroundColor: theme.palette.surfaces.tint,
+            backgroundColor: theme.palette.surfaces.card,
             px: { xs: 2.5, sm: 3 },
             py: 2.5,
           })}

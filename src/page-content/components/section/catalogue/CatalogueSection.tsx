@@ -42,7 +42,7 @@ export default function CatalogueSection() {
               py: 2,
               borderRadius: "25px",
               border: `1px solid ${theme.palette.surfaces.border}`,
-              backgroundColor: theme.palette.surfaces.tint,
+              backgroundColor: theme.palette.surfaces.card,
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
               alignItems: { xs: "flex-start", sm: "center" },

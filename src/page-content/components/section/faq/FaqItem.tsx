@@ -28,7 +28,9 @@ export default function FaqItem({
       sx={(theme) => ({
         borderRadius: "25px",
         border: `1px solid ${theme.palette.surfaces.border}`,
-        backgroundColor: open ? theme.palette.surfaces.tint : "transparent",
+        backgroundColor: open
+          ? theme.palette.surfaces.raised
+          : theme.palette.surfaces.card,
         px: "30px",
         py: "26px",
         transition: theme.transitions.create("background-color"),
