@@ -1,5 +1,45 @@
 # Validation record
 
+## Core 1.1.0 and SEO snapshots, 24 September 2026
+
+The same port as `ui-002`, checked the same way, with `3fde26b` as the reference.
+
+### Build
+
+- `pnpm verify` clean; `pnpm build` exports 47 HTML files and the snapshot step refreshes
+  all of them.
+- `pnpm test:export` verifies 45 primary-language snapshots: island with a `<main>`,
+  `lang="sl"`, the language bootstrap, a fresh seed and the title taken from it.
+
+### What the HTML now carries
+
+| | before (`3fde26b`) | after |
+|---|---|---|
+| `out/index.html` | 12 083 B | 193 659 B |
+| `<main>` in the home page | 0 | 1 |
+| distinct `<title>` values | 1 for all 46 routes | one per route |
+
+### Dark theme
+
+The snapshot is rendered with this theme, not a default one: with scripts disabled the page
+ground is `rgb(17, 18, 20)`, headings are white over the banner photograph and the blog
+cards are light with dark type — the same page the live app draws. All 46 routes render one
+`<main>`, real text and no horizontal overflow.
+
+### Snapshot island
+
+- The island is gone after hydration on every sampled route: one `main`, one `h1`, no
+  console error and no exception.
+- A visitor with a saved `EN` preference never gets a painted snapshot frame (21 samples per
+  route on three routes); the preference key is scoped to the base path, which is the key
+  the head bootstrap reads.
+
+### Inherited gaps
+
+The gallery and the video thumbnails have no images in the snapshot, a price item detail page
+is empty below the band (its section renders only for `PRICING_STORE`), and detail pages carry
+two `<h1>`. All four are inherited: `ui-002` and `ui-004` render the same pages the same way.
+
 ## Redesign, 2 September 2026
 
 Checks run against this repository after the visual layer was finished, with
@@ -18,6 +58,10 @@ and built with the same core package. Both exports were then served and read bac
 through headless Edge, because the exported HTML is only a shell — every page is a
 client component, so the section markup exists after hydration and cannot be
 grepped out of `out/**/index.html`.
+
+> That last sentence held until 24 September 2026. Since the snapshot port the primary
+> language **is** in `out/**/index.html`; the rest of this section is unchanged and still
+> describes the redesign as it was checked then.
 
 - **Routes** — identical: the same 46 `out/**/index.html` paths, byte for byte in
   the sorted listing.

@@ -28,11 +28,18 @@ Visual code may import from these local facades:
 @/core/constants
 ```
 
-Build-time SEO files may additionally import:
+The two SEO components in `src/components/seo` may additionally import:
 
 ```text
-@/core/seo
+@/core/seo-state
+@/core/font-startup
+@/core/language-startup
 ```
+
+Page metadata comes from the SEO seed those adapters read, not from Next's build-time
+metadata payload: the snapshot renderer refreshes the exported HTML and the seed together,
+per route. `@/core/seo` and `@/core/snapshot-model` are build-time and renderer-side only;
+the seed import itself lives in `@/core/seo-state`, so visual code never reaches `@/data/`.
 
 Visual code must not import:
 

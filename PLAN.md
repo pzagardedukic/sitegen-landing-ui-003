@@ -108,3 +108,29 @@ Nabor v `fixtures/` se prenese; smiselno je dodati še varianto s **svetlo stran
 Isto kot v `ui-002`: `src/core/*`, `scripts/*`, `templates/pages/**`, `next.config.ts`, `tsconfig.json`, `website.json`, `src/data/`, `public/data/`, vrstni red sekcij in pogoji prikaza v `src/page-content/pages/*`, `src/app/layout.tsx` in `AppProviders`.
 
 Razmiki, tipografija in postavitev prav tako ne. Če se pri delu pokaže, da je kaj od tega narobe, gre popravek **najprej v `ui-002`** in se od tam prenese sem — sicer se temi razideta v nečem, kar ni barva.
+
+---
+
+## Jedro 1.1.0 in posnetki za SEO (24. 9. 2026)
+
+Isti poseg kot v `ui-002` in z istim razlogom: izvožen HTML je bil lupina — brez `<main>`,
+z enim samim naslovom na vseh 46 poteh in s kanonično povezavo s korenskega sloja, ki je
+16 podstranem pripisala, da so kopija domače. Podrobnosti mehanike so zapisane v `ui-002`;
+tu je samo, kar je za to temo drugače.
+
+Pravilo iz prejšnjega razdelka velja tudi za to: poseg je šel **najprej v `ui-002`** in je
+od tam prenesen sem, datoteka za datoteko, tako da se temi ne razideta v ničemer, kar ni
+barva.
+
+Tematsko odvisna sta dva dela:
+
+- **Pisavi v nadomestku za `next/font/google`** sta isti kot v `ui-002` (Sora, Manrope), ker
+  se temi razlikujeta po paleti, ne po tipografiji. Pisava, ki bi bila uvožena in je v
+  nadomestku ne bi bilo, zruši gradnjo namesto tihega nadomestka — to je namen.
+- **Plošča za ponovni poskus** v `globals.css` je narisana, preden tema obstaja, zato so njene
+  barve trdo zapisane. Tu so barve te teme (`#111114` podlaga, `#f2f2f3` besedilo), ne
+  `ui-002`-ini beli — sicer bi bralec ob odpovedi jezika dobil edini bel zaslon na strani.
+
+Posebej preverjeno za temno temo: posnetek brez JavaScripta se izriše berljiv — svetle
+kartice s temnim besedilom in temna podlaga strani, tako kot v živi aplikaciji. To ni
+samoumevno: posnetek nosi svoje stile in bi ob napaki pristal na privzeti beli podlagi.
