@@ -34,6 +34,14 @@ cards are light with dark type — the same page the live app draws. All 46 rout
   route on three routes); the preference key is scoped to the base path, which is the key
   the head bootstrap reads.
 
+### Variants
+
+`pnpm test:variants`: all 10 fixtures build and render at 390 / 768 / 1440. The only
+complaints are 16 aborted requests on `/kontakt/`, and every one of them now names itself —
+`https://www.google.com/maps/embed?…`, the map embed, which shows a consent page in headless
+Edge. No overflow, no clipped text, no broken image, no runaway DOM and no invisible text:
+the two checks written for a page that starts empty survive a page that starts full.
+
 ### Inherited gaps
 
 The gallery and the video thumbnails have no images in the snapshot, a price item detail page
