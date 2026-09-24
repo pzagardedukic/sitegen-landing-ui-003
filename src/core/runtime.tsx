@@ -6,11 +6,15 @@ import {
   createWebsiteRuntime,
 } from "@ptlabTadej/sitegen-landing-core/runtime";
 
-import {
-  BASE_PATH,
-  primaryLanguage,
-  supportedLanguages,
-} from "./static";
+import { BASE_PATH, primaryLanguage } from "./static";
+
+/*
+ * The same preference the head bootstrap reads before first paint: its storage key carries
+ * the deployment's base path, so two demos on one host do not share a saved language. The
+ * React runtime has to write the key the bootstrap reads, or the choice survives only
+ * through the legacy fallback.
+ */
+import { languagePreference } from "./language-startup";
 
 const websiteRuntime = createWebsiteRuntime({
   primaryLanguage,
@@ -18,8 +22,7 @@ const websiteRuntime = createWebsiteRuntime({
 });
 
 const languageRuntime = createLanguageRuntime({
-  primaryLanguage,
-  supportedLanguages,
+  ...languagePreference,
   loadWebsiteJsonForLang: websiteRuntime.loadWebsiteJsonForLang,
 });
 

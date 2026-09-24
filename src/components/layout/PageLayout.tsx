@@ -1,9 +1,10 @@
 "use client";
 
 import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import HeaderLayout from "./HeaderLayout";
 import FooterLayout from "./FooterLayout";
+import { markContentReady } from "@/core/language-startup";
 
 type PageLayoutProps = {
   header: React.ReactNode;
@@ -26,6 +27,18 @@ export default function PageLayout({
   footer,
   children,
 }: PageLayoutProps) {
+  /*
+   * Tells the SEO snapshot island it can go: the real page is committed.
+   *
+   * This is the only thing that dispatches `sitegen:content-ready`, and the island removes
+   * itself on nothing else — without this call every page would show its content twice, the
+   * snapshot underneath and the live app on top. It is a layout effect on purpose, so the
+   * swap happens before paint rather than a frame later.
+   */
+  useLayoutEffect(() => {
+    markContentReady();
+  }, []);
+
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {

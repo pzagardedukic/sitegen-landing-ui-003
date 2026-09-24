@@ -11,3 +11,5 @@ allowBuilds:
   esbuild: true
   sharp: true
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - "@ptlabTadej/sitegen-landing-core@1.1.0"

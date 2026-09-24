@@ -1,0 +1,296 @@
+{
+  "schema": 1,
+  "basePath": "",
+  "siteOrigin": "",
+  "primaryLanguage": "SL",
+  "supportedLanguages": [
+    "SL",
+    "EN"
+  ],
+  "structure": "{\"primaryLanguage\":\"SL\",\"languages\":[\"EN\",\"SL\"],\"optionalSections\":{\"blog\":true,\"careers\":true,\"catalogues\":true,\"clients\":true,\"events\":true,\"experience\":true,\"faq\":true,\"gallery\":true,\"portfolio\":true,\"pricing\":true,\"reviews\":true,\"schedule\":true,\"services\":true,\"subscribe\":true,\"team\":true,\"videos\":true},\"counts\":{\"portfolio\":6,\"blog\":5,\"pricing\":10,\"careers\":3,\"events\":5}}",
+  "routes": [
+    {
+      "path": "/",
+      "file": "index.html",
+      "page": "home"
+    },
+    {
+      "path": "/o-nas/",
+      "file": "o-nas/index.html",
+      "page": "about"
+    },
+    {
+      "path": "/blog/",
+      "file": "blog/index.html",
+      "page": "blog"
+    },
+    {
+      "path": "/blog/1-zakaj-vas-po-prvi-uri-boli-tam-kjer-niste-pricakovali/",
+      "file": "blog/1-zakaj-vas-po-prvi-uri-boli-tam-kjer-niste-pricakovali/index.html",
+      "page": "blog",
+      "slug": "1-zakaj-vas-po-prvi-uri-boli-tam-kjer-niste-pricakovali",
+      "id": 1
+    },
+    {
+      "path": "/blog/2-nevtralna-medenica-najbolj-ponavljano-navodilo-v-dvorani/",
+      "file": "blog/2-nevtralna-medenica-najbolj-ponavljano-navodilo-v-dvorani/index.html",
+      "page": "blog",
+      "slug": "2-nevtralna-medenica-najbolj-ponavljano-navodilo-v-dvorani",
+      "id": 2
+    },
+    {
+      "path": "/blog/3-koliko-vzmeti-je-prav-in-zakaj-vec-ni-tezje/",
+      "file": "blog/3-koliko-vzmeti-je-prav-in-zakaj-vec-ni-tezje/index.html",
+      "page": "blog",
+      "slug": "3-koliko-vzmeti-je-prav-in-zakaj-vec-ni-tezje",
+      "id": 3
+    },
+    {
+      "path": "/blog/4-dvakrat-tedensko-je-meja-pod-katero-se-ne-pozna/",
+      "file": "blog/4-dvakrat-tedensko-je-meja-pod-katero-se-ne-pozna/index.html",
+      "page": "blog",
+      "slug": "4-dvakrat-tedensko-je-meja-pod-katero-se-ne-pozna",
+      "id": 4
+    },
+    {
+      "path": "/blog/5-vrnitev-k-vadbi-po-porodu-prvih-sest-tednov/",
+      "file": "blog/5-vrnitev-k-vadbi-po-porodu-prvih-sest-tednov/index.html",
+      "page": "blog",
+      "slug": "5-vrnitev-k-vadbi-po-porodu-prvih-sest-tednov",
+      "id": 5
+    },
+    {
+      "path": "/zaposlitev/",
+      "file": "zaposlitev/index.html",
+      "page": "careers"
+    },
+    {
+      "path": "/zaposlitev/1-instruktor-oziroma-instruktorica-reformer-pilatesa/",
+      "file": "zaposlitev/1-instruktor-oziroma-instruktorica-reformer-pilatesa/index.html",
+      "page": "careers",
+      "slug": "1-instruktor-oziroma-instruktorica-reformer-pilatesa",
+      "id": 1
+    },
+    {
+      "path": "/zaposlitev/2-instruktor-za-rehabilitacijski-program/",
+      "file": "zaposlitev/2-instruktor-za-rehabilitacijski-program/index.html",
+      "page": "careers",
+      "slug": "2-instruktor-za-rehabilitacijski-program",
+      "id": 2
+    },
+    {
+      "path": "/zaposlitev/3-vodja-recepcije-in-clanstev/",
+      "file": "zaposlitev/3-vodja-recepcije-in-clanstev/index.html",
+      "page": "careers",
+      "slug": "3-vodja-recepcije-in-clanstev",
+      "id": 3
+    },
+    {
+      "path": "/katalogi/",
+      "file": "katalogi/index.html",
+      "page": "catalogues"
+    },
+    {
+      "path": "/kontakt/",
+      "file": "kontakt/index.html",
+      "page": "contact"
+    },
+    {
+      "path": "/galerija/",
+      "file": "galerija/index.html",
+      "page": "gallery"
+    },
+    {
+      "path": "/pravno/",
+      "file": "pravno/index.html",
+      "page": "legal"
+    },
+    {
+      "path": "/projekti/",
+      "file": "projekti/index.html",
+      "page": "portfolio"
+    },
+    {
+      "path": "/projekti/1-reformer-za-zacetnike/",
+      "file": "projekti/1-reformer-za-zacetnike/index.html",
+      "page": "portfolio",
+      "slug": "1-reformer-za-zacetnike",
+      "id": 1
+    },
+    {
+      "path": "/projekti/2-reformer-nadaljevalni/",
+      "file": "projekti/2-reformer-nadaljevalni/index.html",
+      "page": "portfolio",
+      "slug": "2-reformer-nadaljevalni",
+      "id": 2
+    },
+    {
+      "path": "/projekti/3-jutranji-matt-pilates/",
+      "file": "projekti/3-jutranji-matt-pilates/index.html",
+      "page": "portfolio",
+      "slug": "3-jutranji-matt-pilates",
+      "id": 3
+    },
+    {
+      "path": "/projekti/4-pilates-za-pisarnisko-telo/",
+      "file": "projekti/4-pilates-za-pisarnisko-telo/index.html",
+      "page": "portfolio",
+      "slug": "4-pilates-za-pisarnisko-telo",
+      "id": 4
+    },
+    {
+      "path": "/projekti/5-pilates-po-poskodbi/",
+      "file": "projekti/5-pilates-po-poskodbi/index.html",
+      "page": "portfolio",
+      "slug": "5-pilates-po-poskodbi",
+      "id": 5
+    },
+    {
+      "path": "/projekti/6-nosecniski-in-poporodni-pilates/",
+      "file": "projekti/6-nosecniski-in-poporodni-pilates/index.html",
+      "page": "portfolio",
+      "slug": "6-nosecniski-in-poporodni-pilates",
+      "id": 6
+    },
+    {
+      "path": "/cenik/",
+      "file": "cenik/index.html",
+      "page": "pricing"
+    },
+    {
+      "path": "/cenik/1-clanstvo-4-mesecno/",
+      "file": "cenik/1-clanstvo-4-mesecno/index.html",
+      "page": "pricing",
+      "slug": "1-clanstvo-4-mesecno",
+      "id": 1
+    },
+    {
+      "path": "/cenik/2-clanstvo-8-mesecno/",
+      "file": "cenik/2-clanstvo-8-mesecno/index.html",
+      "page": "pricing",
+      "slug": "2-clanstvo-8-mesecno",
+      "id": 2
+    },
+    {
+      "path": "/cenik/3-neomejeno-clanstvo/",
+      "file": "cenik/3-neomejeno-clanstvo/index.html",
+      "page": "pricing",
+      "slug": "3-neomejeno-clanstvo",
+      "id": 3
+    },
+    {
+      "path": "/cenik/4-jutranje-clanstvo/",
+      "file": "cenik/4-jutranje-clanstvo/index.html",
+      "page": "pricing",
+      "slug": "4-jutranje-clanstvo",
+      "id": 4
+    },
+    {
+      "path": "/cenik/5-paket-10-ur/",
+      "file": "cenik/5-paket-10-ur/index.html",
+      "page": "pricing",
+      "slug": "5-paket-10-ur",
+      "id": 5
+    },
+    {
+      "path": "/cenik/6-paket-20-ur/",
+      "file": "cenik/6-paket-20-ur/index.html",
+      "page": "pricing",
+      "slug": "6-paket-20-ur",
+      "id": 6
+    },
+    {
+      "path": "/cenik/7-posamezna-ura/",
+      "file": "cenik/7-posamezna-ura/index.html",
+      "page": "pricing",
+      "slug": "7-posamezna-ura",
+      "id": 7
+    },
+    {
+      "path": "/cenik/8-individualna-ura/",
+      "file": "cenik/8-individualna-ura/index.html",
+      "page": "pricing",
+      "slug": "8-individualna-ura",
+      "id": 8
+    },
+    {
+      "path": "/cenik/9-individualno-v-paru/",
+      "file": "cenik/9-individualno-v-paru/index.html",
+      "page": "pricing",
+      "slug": "9-individualno-v-paru",
+      "id": 9
+    },
+    {
+      "path": "/cenik/10-program-za-podjetja/",
+      "file": "cenik/10-program-za-podjetja/index.html",
+      "page": "pricing",
+      "slug": "10-program-za-podjetja",
+      "id": 10
+    },
+    {
+      "path": "/storitve/",
+      "file": "storitve/index.html",
+      "page": "services"
+    },
+    {
+      "path": "/urnik/",
+      "file": "urnik/index.html",
+      "page": "schedule"
+    },
+    {
+      "path": "/dogodki/",
+      "file": "dogodki/index.html",
+      "page": "events"
+    },
+    {
+      "path": "/dogodki/1-dihanje-in-globoke-trebusne-misice/",
+      "file": "dogodki/1-dihanje-in-globoke-trebusne-misice/index.html",
+      "page": "events",
+      "slug": "1-dihanje-in-globoke-trebusne-misice",
+      "id": 1
+    },
+    {
+      "path": "/dogodki/2-pilates-za-tekace-kolki-in-stopala/",
+      "file": "dogodki/2-pilates-za-tekace-kolki-in-stopala/index.html",
+      "page": "events",
+      "slug": "2-pilates-za-tekace-kolki-in-stopala",
+      "id": 2
+    },
+    {
+      "path": "/dogodki/3-kaj-se-zgodi-s-telesom-po-porodu/",
+      "file": "dogodki/3-kaj-se-zgodi-s-telesom-po-porodu/index.html",
+      "page": "events",
+      "slug": "3-kaj-se-zgodi-s-telesom-po-porodu",
+      "id": 3
+    },
+    {
+      "path": "/dogodki/4-odprti-dan-reformer-brez-rezervacije/",
+      "file": "dogodki/4-odprti-dan-reformer-brez-rezervacije/index.html",
+      "page": "events",
+      "slug": "4-odprti-dan-reformer-brez-rezervacije",
+      "id": 4
+    },
+    {
+      "path": "/dogodki/5-ergonomija-pisarne-in-vaje-med-delom/",
+      "file": "dogodki/5-ergonomija-pisarne-in-vaje-med-delom/index.html",
+      "page": "events",
+      "slug": "5-ergonomija-pisarne-in-vaje-med-delom",
+      "id": 5
+    },
+    {
+      "path": "/videi/",
+      "file": "videi/index.html",
+      "page": "videos"
+    },
+    {
+      "path": "/pogosta-vprasanja/",
+      "file": "pogosta-vprasanja/index.html",
+      "page": "faq"
+    },
+    {
+      "path": "/404/",
+      "file": "404.html",
+      "page": "not-found"
+    }
+  ]
+}

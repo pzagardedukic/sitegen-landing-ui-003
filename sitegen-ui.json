@@ -4,6 +4,6 @@
   "core": {
     "package": "@ptlabTadej/sitegen-landing-core",
     "compatibleMajor": 1,
-    "testedVersion": "1.0.0"
+    "testedVersion": "1.1.0"
   }
 }

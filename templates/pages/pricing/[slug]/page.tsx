@@ -1,11 +1,4 @@
-import type { Metadata } from "next";
-import {
-  getAllPricingSlugs,
-  isSectionEnabled,
-  getPageSlugByKey,
-} from "@/core/static";
-import { getSeoPricingItem } from "@/core/seo";
-import { buildItemMetadata } from "@/core/seo";
+import { getAllPricingSlugs, isSectionEnabled } from "@/core/static";
 import PricingItemPage from "@/page-content/pages/pricing/PricingItem";
 import { notFound } from "next/navigation";
 
@@ -23,21 +16,6 @@ export async function generateStaticParams() {
   return getAllPricingSlugs().map((slug) => ({
     slug,
   }));
-}
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const item = getSeoPricingItem(parseInt(slug, 10));
-  if (!item) return {};
-
-  return buildItemMetadata({
-    title: item.title,
-    description: item.description,
-    image: item.image,
-    path: `/${getPageSlugByKey("pricing")}/${slug}`,
-  });
 }
 
 export default async function PricingItem({ params }: PageProps) {

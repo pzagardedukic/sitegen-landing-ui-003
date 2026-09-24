@@ -13,10 +13,16 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 /* Everything the browser complains about, collected while the page loads. */
 export function collectComplaints(browser) {
   const complaints = [];
+  // `loadingFailed` carries only a request id; without the address a failure can't be told
+  // apart from the map embed or a request the next navigation cancelled.
+  const urls = new Map();
 
   const stop = browser.onEvent((message) => {
     const { method, params } = message;
 
+    if (method === "Network.requestWillBeSent") {
+      urls.set(params.requestId, params.request.url);
+    }
     if (method === "Runtime.exceptionThrown") {
       complaints.push(`exception: ${params.exceptionDetails.text}`);
     }
@@ -27,7 +33,9 @@ export function collectComplaints(browser) {
       complaints.push(`console.error: ${text}`);
     }
     if (method === "Network.loadingFailed") {
-      complaints.push(`request failed: ${params.errorText}`);
+      complaints.push(
+        `request failed: ${params.errorText} ${urls.get(params.requestId) ?? "(unknown url)"}`,
+      );
     }
     if (method === "Network.responseReceived" && params.response.status >= 400) {
       complaints.push(`HTTP ${params.response.status}: ${params.response.url}`);

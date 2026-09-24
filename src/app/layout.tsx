@@ -1,30 +1,11 @@
-import type { Metadata } from "next";
-import { getHomeMeta } from "@/core/static";
-import { SITE_URL } from "@/core/seo";
-
+/*
+ * Content metadata is owned by `PrimarySeoHead`, not Next's build-time metadata payload:
+ * the snapshot renderer refreshes the HTML and its JSON seed together, per route, so a
+ * build-time payload here would only go stale and compete with it.
+ */
 const RootLayout =
   process.env.NEXT_PUBLIC_THEME_EDITOR_ENABLED === "true"
     ? require("./layout.editor").default
     : require("./layout.default").default;
-
-const homeMeta = getHomeMeta();
-
-export const metadata: Metadata = {
-  ...(SITE_URL
-    ? { metadataBase: new URL(SITE_URL), alternates: { canonical: "/" } }
-    : {}),
-  title: {
-    default: homeMeta.name,
-    template: `%s | ${homeMeta.name}`,
-  },
-  description: homeMeta.slogan || undefined,
-  openGraph: {
-    title: homeMeta.name,
-    description: homeMeta.slogan || undefined,
-    siteName: homeMeta.name,
-    ...(SITE_URL ? { url: "/" } : {}),
-    type: "website",
-  },
-};
 
 export default RootLayout;

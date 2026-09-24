@@ -1,11 +1,4 @@
-import type { Metadata } from "next";
-import {
-  getAllCareerSlugs,
-  isSectionEnabled,
-  getPageSlugByKey,
-} from "@/core/static";
-import { getSeoCareerItem } from "@/core/seo";
-import { buildItemMetadata } from "@/core/seo";
+import { getAllCareerSlugs, isSectionEnabled } from "@/core/static";
 import CareerPage from "@/page-content/pages/careers/Career";
 import { notFound } from "next/navigation";
 
@@ -21,20 +14,6 @@ export async function generateStaticParams() {
   }
 
   return getAllCareerSlugs().map((slug) => ({ slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const item = getSeoCareerItem(parseInt(slug, 10));
-  if (!item) return {};
-
-  return buildItemMetadata({
-    title: item.title,
-    description: item.description,
-    path: `/${getPageSlugByKey("careers")}/${slug}`,
-  });
 }
 
 export default async function Career({ params }: PageProps) {
