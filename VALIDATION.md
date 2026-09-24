@@ -44,9 +44,13 @@ the two checks written for a page that starts empty survive a page that starts f
 
 ### Inherited gaps
 
-The gallery and the video thumbnails have no images in the snapshot, a price item detail page
-is empty below the band (its section renders only for `PRICING_STORE`), and detail pages carry
-two `<h1>`. All four are inherited: `ui-002` and `ui-004` render the same pages the same way.
+The gallery and the video thumbnails have no images in the snapshot, and a price item detail
+page is empty below the band (its section renders only for `PRICING_STORE`). Both are
+inherited: `ui-002` and `ui-004` render the same pages the same way.
+
+Detail pages also carried two `<h1>`, the band and the item title. That one was fixed the
+same day (#10), in `ui-002` first and then here: the band keeps the `h1` and the repeat drops
+a level. Counted across the whole export afterwards, all 47 pages have exactly one `<h1>`.
 
 ## Redesign, 2 September 2026
 
