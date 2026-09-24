@@ -1,0 +1,7 @@
+:HL["/sitegen-landing-ui-003/_next/static/chunks/04a.sa-e2ffgd.css","style"]
+:HL["/sitegen-landing-ui-003/_next/static/chunks/01sji8sep8i0t.css","style"]
+:HL["/sitegen-landing-ui-003/_next/static/media/6ab0db14f70d8ed6-s.p.0ctuso5mgh_i..woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/sitegen-landing-ui-003/_next/static/media/a343f882a40d2cc9-s.p.0kho-wj7-y-w1.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/sitegen-landing-ui-003/_next/static/media/b886574ba42c3409-s.p.0n0by9e-ig5xq.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/sitegen-landing-ui-003/_next/static/media/c41ca59f1c34ba31-s.p.0xxb547n1hn74.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"(pages)","param":null,"prefetchHints":0,"slots":{"children":{"name":"dogodki","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"3-kaj-se-zgodi-s-telesom-po-porodu","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"STNtFBpB1HiPWRmPfCcWO"}

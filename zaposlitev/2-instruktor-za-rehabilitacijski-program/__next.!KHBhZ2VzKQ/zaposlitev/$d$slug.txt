@@ -1,0 +1,5 @@
+1:"$Sreact.fragment"
+2:I[21560,["/sitegen-landing-ui-003/_next/static/chunks/0-ps2fu91hoyx.js","/sitegen-landing-ui-003/_next/static/chunks/0mw.d-l_kp0zd.js","/sitegen-landing-ui-003/_next/static/chunks/0ymm9s~4fggi..js"],"default"]
+3:I[18825,["/sitegen-landing-ui-003/_next/static/chunks/0-ps2fu91hoyx.js","/sitegen-landing-ui-003/_next/static/chunks/0mw.d-l_kp0zd.js","/sitegen-landing-ui-003/_next/static/chunks/0ymm9s~4fggi..js"],"default"]
+4:[]
+0:{"rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"isPartial":false,"staleTime":300,"varyParams":"$W4","buildId":"STNtFBpB1HiPWRmPfCcWO"}
