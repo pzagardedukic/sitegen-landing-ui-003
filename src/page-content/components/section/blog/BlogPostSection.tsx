@@ -57,7 +57,11 @@ export default function BlogPostSection({ id }: { id: number }) {
             {blog.date} · {blog.author}
           </Typography>
 
-          <Typography variant="h2" component="h1">
+          {/*
+            The title band above is this page's h1 and carries the same words. This repeat
+            is a visual echo, not a second page title, so it stays a level below.
+          */}
+          <Typography variant="h2" component="h2">
             {blog.title}
           </Typography>
 

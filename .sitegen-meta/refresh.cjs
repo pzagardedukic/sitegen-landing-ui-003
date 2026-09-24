@@ -48963,7 +48963,7 @@ function PortfolioItemSection({ id }) {
                 Typography_default,
                 {
                   variant: "h2",
-                  component: "h1",
+                  component: "h2",
                   sx: { gridColumn: { md: "1" } },
                   children: portfolioItem.title
                 }
@@ -50256,7 +50256,7 @@ function BlogPostSection({ id }) {
                       " \xB7 ",
                       blog.author
                     ] }),
-                    /* @__PURE__ */ (0, import_jsx_runtime210.jsx)(Typography_default, { variant: "h2", component: "h1", children: blog.title }),
+                    /* @__PURE__ */ (0, import_jsx_runtime210.jsx)(Typography_default, { variant: "h2", component: "h2", children: blog.title }),
                     /* @__PURE__ */ (0, import_jsx_runtime210.jsx)(
                       Box_default,
                       {
@@ -51855,7 +51855,7 @@ function NotFoundSection() {
             children: /* @__PURE__ */ (0, import_jsx_runtime238.jsx)(SearchOff_default, { sx: { fontSize: { xs: 44, md: 60 } } })
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime238.jsx)(Typography_default, { variant: "h2", component: "h1", children: translation.title }),
+        /* @__PURE__ */ (0, import_jsx_runtime238.jsx)(Typography_default, { variant: "h2", component: "h2", children: translation.title }),
         /* @__PURE__ */ (0, import_jsx_runtime238.jsx)(Typography_default, { variant: "body1", sx: { opacity: 0.72 }, children: translation.text }),
         /* @__PURE__ */ (0, import_jsx_runtime238.jsx)(GradientButton, { href: withBasePath("/"), endIcon: /* @__PURE__ */ (0, import_jsx_runtime238.jsx)(ArrowOutward_default, {}), children: translation.backToHome })
       ]

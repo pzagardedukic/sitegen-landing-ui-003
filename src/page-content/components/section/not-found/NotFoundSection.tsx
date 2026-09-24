@@ -43,7 +43,11 @@ export default function NotFoundSection() {
         <SearchOffIcon sx={{ fontSize: { xs: 44, md: 60 } }} />
       </Box>
 
-      <Typography variant="h2" component="h1">
+      {/*
+        The title band above is this page's h1 and carries the same words. This repeat
+        is a visual echo, not a second page title, so it stays a level below.
+      */}
+      <Typography variant="h2" component="h2">
         {translation.title}
       </Typography>
 
