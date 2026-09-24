@@ -44,9 +44,15 @@ the two checks written for a page that starts empty survive a page that starts f
 
 ### Inherited gaps
 
-The gallery and the video thumbnails have no images in the snapshot, and a price item detail
-page is empty below the band (its section renders only for `PRICING_STORE`). Both are
-inherited: `ui-002` and `ui-004` render the same pages the same way.
+The gallery has no images in the snapshot — the picture is drawn only after the browser
+measures it — and a price item detail page is empty below the band (its section renders only
+for `PRICING_STORE`). Both are inherited: `ui-002` and `ui-004` render the same pages the
+same way; tracked as #9 and #2.
+
+The video thumbnails were missing too, for a different reason: the address came from an
+effect. Fixed the same day (#8), in `ui-002` first and then here — a YouTube still is a pure
+function of the video id, so it is known during the first render. `/videi/` now carries three
+stills instead of none.
 
 Detail pages also carried two `<h1>`, the band and the item title. That one was fixed the
 same day (#10), in `ui-002` first and then here: the band keeps the `h1` and the repeat drops
