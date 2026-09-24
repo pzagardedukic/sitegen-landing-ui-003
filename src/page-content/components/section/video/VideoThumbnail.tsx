@@ -3,14 +3,28 @@
 import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import { getVideoThumbnail } from "@/core/utils";
+import { extractYouTubeId, getVideoThumbnail } from "@/core/utils";
+
+/*
+ * A YouTube still is a pure function of the video id, so it can be known during the first
+ * render — and the first render is what the exported HTML keeps. Without it a reader who
+ * has no JavaScript yet, a search engine or a link preview, gets the video page with no
+ * pictures at all, because the effect below never runs for them.
+ *
+ * Vimeo needs a request, so it stays in the effect and replaces this when it arrives; for
+ * a YouTube URL the effect resolves to this same address, so nothing moves.
+ */
+function youTubeStill(url: string): string | null {
+  const id = extractYouTubeId(url);
+  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
+}
 
 /*
  * A video tile from the Figma frame (580x326): the still under a black overlay with a round
  * play button, 74px across, in the middle.
  */
 export default function VideoThumbnail({ videoUrl }: { videoUrl: string }) {
-  const [thumb, setThumb] = useState<string | null>(null);
+  const [thumb, setThumb] = useState<string | null>(() => youTubeStill(videoUrl));
 
   useEffect(() => {
     let mounted = true;

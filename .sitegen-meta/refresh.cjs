@@ -51320,8 +51320,12 @@ init_runtime2();
 // src/page-content/components/section/video/VideoThumbnail.tsx
 var import_react46 = __toESM(require_react(), 1);
 var import_jsx_runtime227 = __toESM(require_jsx_runtime(), 1);
+function youTubeStill(url) {
+  const id = extractYouTubeId(url);
+  return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : null;
+}
 function VideoThumbnail({ videoUrl }) {
-  const [thumb, setThumb] = (0, import_react46.useState)(null);
+  const [thumb, setThumb] = (0, import_react46.useState)(() => youTubeStill(videoUrl));
   (0, import_react46.useEffect)(() => {
     let mounted = true;
     (async () => {
